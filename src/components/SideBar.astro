@@ -16,10 +16,10 @@ const { sideBarActiveItemID } = Astro.props;
          
           <div class="w-[8.5rem]">
             
-            <Image class="mask mask-circle" format="png" width={300} height={300} src="/tatoLogo.png" alt="He's TatoNaranjo" />
+            <Image class="mask mask-circle" format="png" width={300} height={300} src="/tatoLogo.png" alt="He's TatoNaranjo" loading="eager"/>
           </div>
         </div>
-        <img src="/Doodles/circleDoodle.svg" class = "text-black absolute top-[15px] w-[160px] h-[160px] right-[75px]" alt="Crown" id="crown">
+        <Image src="/Doodles/circleDoodle.svg" format="svg" width={160} height={160} class = "text-black absolute top-[15px] w-[160px] h-[160px] right-[75px]" alt="Crown" id="crown" loading="eager">
       </a>
     </div>
     <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
