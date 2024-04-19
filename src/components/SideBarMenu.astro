@@ -1,19 +1,71 @@
 ---
+import { Image } from "astro:assets";
 const { sideBarActiveItemID } = Astro.props;
 const activeClass = "bg-base-300"; // For primary color replace with `active` class
 ---
 
-<ul class="menu grow shrink menu-md overflow-y-auto">
-    <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-    <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li>
-    <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li>
-    <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li>
+<ul class="menu grow shrink menu-md overflow-y-auto flex flex-col gap-2 ">
+    <li><a class="py-3 text-base" id="home" href="/">
+        <Image
+        class="justify-center"
+        format="svg"
+        width={20}
+        height={20}
+        src="/Doodles/home.svg"
+        alt="A Two Floor House"
+        loading="eager"
+      />
+        Home</a></li>
+    <li><a class="py-3 text-base" id="projects" href="/projects">
+        <Image
+        class="justify-center"
+        format="svg"
+        width={20}
+        height={20}
+        src="/Doodles/projects1.svg"
+        alt="A boy listening music"
+        loading="eager"
+      />
+        Projects</a></li>
+    <li><a class="py-3 text-base" id="blog" href="/blog/">
+        <Image
+        class="justify-center"
+        format="svg"
+        width={20}
+        height={20}
+        src="/Doodles/blog.svg"
+        alt="A Newspaper"
+        loading="eager"
+      />
+        Blog</a></li>
+    <li><a class="py-3 text-base" id="cv" href="/cv">
+        <Image
+        class="justify-center"
+        format="svg"
+        width={20}
+        height={20}
+        src="/Doodles/gears.svg"
+        alt="Metal Gears"
+        loading="eager"
+      />
+        CV</a></li>
     <li>
         <a
             class="py-3 text-base"
             href="mailto:naranjosa2004@gmail.com"
             target="_blank"
-            referrerpolicy="no-referrer-when-downgrade">Contact</a
+            referrerpolicy="no-referrer-when-downgrade">
+            <Image
+            class="justify-center"
+            format="svg"
+            width={20}
+            height={20}
+            src="/Doodles/contact.svg"
+            alt="A Man with a phone"
+            loading="eager"
+          />
+            
+            Contact</a
         >
     </li>
 </ul>
