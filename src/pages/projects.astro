@@ -1,19 +1,27 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout title = "Projects" sideBarActiveItemID="projects">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5 flex gap-2 items-center">Projects with <Image
+      class="justify-center"
+      format="svg"
+      width={50}
+      height={50}
+      src="/Doodles/react_logo.svg"
+      alt="Programming Language Framework Logo"
+      loading="eager"
+    /></div>
   </div>
-
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="Realtime Chat"
+    img="/ProjectImages/RealtimeChat.webp"
+    desc="Realtime chat is a project made with React, having as database Firestore, Google's non-relational database, and using Firebase as an authenticator method for user registration. It owes its name to the way in which the data is updated in real time thanks to Firebase. This was a project made by TatoNaranjo to learn by creating tools with applications that you could find in real life."
+    url="https://github.com/TatoNaranjo/Realtime-Chat"
+    badge="React & Firebase!"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
