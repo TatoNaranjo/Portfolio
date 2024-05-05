@@ -33,7 +33,15 @@ import { Image } from "astro:assets";
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Another Projects</div>
+    <div class="text-3xl w-full font-bold mb-5 flex gap-2 items-center mt-5">Another Projects  <Image
+      class="justify-center"
+      format="svg"
+      width={30}
+      height={30}
+      src="/Doodles/guitarLogo.svg"
+      alt="An acoustic Guitar"
+      loading="eager"
+    /></div>
   </div>
 
   <HorizontalCard
