@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/sections/Header.astro";
+import Welcome from "../../components/sections/Welcome.astro";
 import "../../styles/global.css";
 import text_en from "../../i18n/en.json"
 
@@ -9,4 +10,5 @@ let {altLang} = text_en;
 
 <Layout>
   <Header altLang=`${altLang}`/>
+  <Welcome i18n = {text_en.welcome}/>
 </Layout>
