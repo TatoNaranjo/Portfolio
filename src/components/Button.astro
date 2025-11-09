@@ -1,16 +1,30 @@
 ---
 interface Props {
-  text:string;
-  link:string;
-  variant?: string;
-  tailwind?: string;
-
+  text: string;
+  href: string;
+  variant?: "black" | "white" | "with-logo";
+  className?: string;
 }
-const {variant = "black", link,text, tailwind} = Astro.props
 
+const {
+  text,
+  href,
+  variant = "black",
+  className = "",
+} = Astro.props;
+
+const baseStyles = "flex items-center justify-center p-4 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-[16px]";
+
+const variantStyles = {
+  black: "bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]",
+  white: "bg-white text-black border-4 border-black hover:bg-black hover:text-white hover:border-black hover:shadow-[4px_4px_0_0_#000]",
+  'with-logo': "bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:shadow-[4px_4px_0_0_#000] gap-2" 
+};
+
+const allStyles = `${baseStyles} ${variantStyles[variant]} ${className}`;
 ---
 
-<button class={`button-${variant} ${tailwind}`}>
+<a href={href} class={allStyles}>
   <slot/>
-  <a href={link}>{text}</a>
-</button>
+  <span>{text}</span>
+</a>
