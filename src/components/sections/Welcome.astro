@@ -1,0 +1,38 @@
+---
+import Button from '../Button.astro';
+import { Image } from 'astro:assets';
+import MePhoto from "../../assets/images/me.png";
+interface Props {
+    i18n: {
+        badgeInfo: string;
+        contact: string;
+    };
+}
+
+const { i18n } = Astro.props;
+const {badgeInfo, contact} = i18n;
+
+---
+
+<section class="welcomeContainer flex md:justify-around flex-col md:flex-row justify-center items-center gap-4 md:gap-16 p-8 md:p-16">
+<div class="infoContainer flex items-center md:items-start flex-col gap-2.5 py-4 px-2 ">
+    <div class="badgeContainer flex border-4 border-black w-fit h-fit py-2 px-6 shadow-[0px_4px_0_0_#000]">
+        {badgeInfo}
+    </div>
+    <div class="nameContainer flex flex-col uppercase text-[36px] md:text-[64px] text-center md:text-left">
+        <span id="firstName" class="md:h-[77px]">Santiago</span>
+        <span class="md:h-[77px]">Naranjo</span>
+        <span class="md:h-[77px]">Herrera</span>
+    </div>
+
+    <div class="contactContainer flex flex-wrap gap-4 justify-center items-center mt-4 md:mt-0">
+        <Button text={contact} href=""/>
+        <Button text='Github' href='' variant='white'/>
+        <Button text='+54 3143109118' href='' variant='white'/>
+    </div>
+</div>
+
+<div class="photoFrame flex justify-center items-center">
+    <Image src={MePhoto} alt="Santiago Naranjo Herrera" width={189} height={247} class="md:h-[396px] md:w-[304px] border-4 border-black object-fit " priority/>
+</div>
+</section>

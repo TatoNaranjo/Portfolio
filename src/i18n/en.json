@@ -1,4 +1,8 @@
 {
-  "altLang": "es"
+  "altLang": "es",  
+  "welcome": {
+    "badgeInfo": "Web Developer",
+    "contact": "contact"
+  }
  
 }
