@@ -1,0 +1,16 @@
+---
+interface Props {
+  text:string;
+  link:string;
+  variant?: string;
+  tailwind?: string;
+
+}
+const {variant = "black", link,text, tailwind} = Astro.props
+
+---
+
+<button class={`button-${variant} ${tailwind}`}>
+  <slot/>
+  <a href={link}>{text}</a>
+</button>

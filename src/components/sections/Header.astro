@@ -1,0 +1,14 @@
+---
+interface Props {
+  altLang: string;
+}
+const {altLang = "EN"} = Astro.props
+import Button from "../Button.astro";
+
+let link = altLang.toLowerCase();
+---
+
+
+<div class ="absolute top-4 right-4 flex gap-4">
+    <Button text=`${altLang}` link={`/${link}`} tailwind="w-[52px] h-[52px]"></Button>
+</div>
