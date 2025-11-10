@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
 
-/* Aquí SOLO pones las cosas que Tailwind NO puede hacer */
+@theme{
+
+  --animate-movelogo: moveLogo 3s ease-in-out infinite;
+
+@keyframes moveLogo {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+}
+
 :root {
   --titleFont: "Bebas Neue", sans-serif;
   --paragraphFont: "Space Grotesk", sans-serif;
 }
 body {
-  font-family: var(--paragraphFont); /* Grotesk es más legible para el body */
+  font-family: var(--paragraphFont);
 }
 h1, h2, h3, h4, h5, h6, a {
-  font-family: var(--titleFont); /* Bebas para títulos */
+  font-family: var(--titleFont);
 }
 .nameContainer, .badgeContainer{
     font-family: var(--titleFont);

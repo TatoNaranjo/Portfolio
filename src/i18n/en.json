@@ -3,6 +3,38 @@
   "welcome": {
     "badgeInfo": "Web Developer",
     "contact": "contact"
+  },
+  "about": {
+    "sectionTitle": "About Me",
+    "content": "Computer and Systems Engineer and Web Developer with experience in agile methodologies. Proficient in technologies such as JavaScript, Python, React, Node.js, and Relational & No Relational databases. Proven track record in efficient problem solving, with demonstrated  ability to quickly adapt to new technologies and development  environments."
+  },
+  "experience": {
+    "sectionTitle": "Experience",
+    "item": [
+      {
+        "role": "Junior Developer",
+        "company": "University Of Cundinamarca",
+        "duration": "2+ Years",
+        "imgName":"coffee.png",
+        "items":[
+          "Collaborated with a team of systems engineers developing the front end of a recipe book to allow students to create, edit and share recipes.",
+          "Developed the front-end of a platform for freelancers focused on the recruitment and creation of medical services  using SCRUM methodology.",
+          "Experience with React.js to build several interactive SPAs."
+        ]
+      },
+       {
+        "role": "Algorithms Tutor & Competitive Programmer",
+        "company": "University Of Cundinamarca",
+        "duration": "April 2022 - Present",
+        "imgName":"comp.png",
+        "items":[
+          "Provide competitive programming tutorials in C++ and Python, guiding students to improve their skills in algorithms and data structures.",
+          "Keep up to date through extensive research and constant review of technical documentation related to algorithms and  data structures.",
+          "Active participant in national and international competitions, such as the ICPC, CCPL, Codeforces Divs and RPC."
+          
+        ]
+      }     
+    ]
   }
  
 }
