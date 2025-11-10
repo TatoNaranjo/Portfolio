@@ -1,0 +1,15 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro';
+interface Props{
+    title:string;
+    content:string;
+}
+const {title, content} = Astro.props;
+---
+<section class="flex flex-col md:flex-row items-center justify-center md:justify-between border-t-8 border-b-8 gap-8 px-6 py-9">
+<SectionTitle text={title} />
+
+<div class="bg-[#f2f2f2] border-4 p-8 text-[10px] md:text-[16px] md:max-w-[50%]">
+    <p>{content}</p>
+</div>
+</section>
