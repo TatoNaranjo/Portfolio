@@ -1,0 +1,57 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro';
+import { Image } from 'astro:assets';
+interface ExperienceItem{
+        role:string;
+        company:string;
+        duration:string;
+        imgName:string;
+        items:string[];
+}
+
+interface Props {
+    
+    sectionTitle: string;
+    expStrings: {
+    item: ExperienceItem[];  
+} 
+}
+const {expStrings, sectionTitle} = Astro.props;
+const allImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.*', { eager: true });
+---
+<section class="flex flex-col items-center justify-center md:items-start md:justify-between border-b-8 gap-8 px-6 py-9">
+<SectionTitle text={sectionTitle} />
+
+<div class="">
+    <div class="">
+        
+       {expStrings.item.map((exp) => (
+    <div class="mb-8 flex flex-col md:flex-row border-4 items-stretch">
+        
+        <div class="w-full h-48 md:w-64 md:h-auto shrink-0">
+            <Image 
+                src={allImages[`/src/assets/images/${exp.imgName}`].default} 
+                alt={exp.company} 
+                
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <div class="flex flex-col grow">
+            <div class="text-white text-sm  bg-black flex flex-col md:items-start items-center text-center md:text-start justify-center p-6">
+                <h3 class="md:text-[36px]">{exp.role}</h3>
+                <h4 class="md:text-[36px]">{exp.company} | {exp.duration}</h4>
+            </div>
+                <ul class="list-disc list-inside p-6 flex flex-col grow justify-center text-[10px] md:text-[16px]">
+                    {exp.items.map((item) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+
+        </div>
+        
+    </div>
+))}
+    </div>
+</div>
+</section>
