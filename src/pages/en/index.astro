@@ -2,8 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/sections/Header.astro";
 import Welcome from "../../components/sections/Welcome.astro";
+import About from "../../components/sections/About.astro";
 import "../../styles/global.css";
 import text_en from "../../i18n/en.json"
+import Experience from "../../components/sections/Experience.astro";
 
 let {altLang} = text_en;
 ---
@@ -11,4 +13,6 @@ let {altLang} = text_en;
 <Layout>
   <Header altLang=`${altLang}`/>
   <Welcome i18n = {text_en.welcome}/>
+  <About title={text_en.about.sectionTitle} content={text_en.about.content} />
+  <Experience sectionTitle={text_en.experience.sectionTitle} expStrings={text_en.experience} />
 </Layout>
