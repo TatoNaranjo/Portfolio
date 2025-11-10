@@ -1,0 +1,19 @@
+---
+interface Props {
+    name:string;
+    className?:string;
+}
+
+const {name, className=""} = Astro.props;
+const icons = import.meta.glob<{ default: any }>('/src/assets/logos/*.svg', { eager: true });
+const iconPath = `/src/assets/logos/${name}.svg`;
+
+if (!icons[iconPath]) {
+  console.error(`Error: Logo "${name}" no encontrado en /src/assets/logos/`);
+  return null;
+}
+
+const IconComponent = icons[iconPath].default;
+---
+
+<IconComponent class={className} />
