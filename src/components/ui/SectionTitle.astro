@@ -1,0 +1,9 @@
+---
+interface Props{
+    text:string;
+}
+const {text} = Astro.props;
+---
+<div class="bg-black flex w-fit justify-center align-center text-white text-[20px] md:text-[64px] px-9 py-2">
+    <h2>{text}</h2>
+</div>
