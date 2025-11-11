@@ -31,10 +31,24 @@
           "Provide competitive programming tutorials in C++ and Python, guiding students to improve their skills in algorithms and data structures.",
           "Keep up to date through extensive research and constant review of technical documentation related to algorithms and  data structures.",
           "Active participant in national and international competitions, such as the ICPC, CCPL, Codeforces Divs and RPC."
-          
         ]
       }     
     ]
+  },
+  "skills": {
+    "sectionTitle": ["Skills", "Languages"]
+  },
+  "languages":[
+    {
+      "language":"Spanish",
+      "level":"Native"
+    },
+    {
+      "language":"English",
+      "level":"C1"
+    }
+  ],
+  "projects": {
+    "sectionTitle": "Projects"
   }
- 
 }

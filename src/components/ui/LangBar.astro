@@ -1,0 +1,14 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+    language: string;
+    level:string;
+}
+const {language, level} = Astro.props;
+---
+
+<div class="flex md:items-center flex-col gap-3 md:flex-row border-4 text-center justify-between px-4 py-2">
+    <span class="md:text-2xl uppercase font-bold">{language}</span>
+    <Button text={level} href="#Skills" className='pointer-events-none' />
+</div>

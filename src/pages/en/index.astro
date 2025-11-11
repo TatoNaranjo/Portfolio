@@ -6,6 +6,8 @@ import About from "../../components/sections/About.astro";
 import "../../styles/global.css";
 import text_en from "../../i18n/en.json"
 import Experience from "../../components/sections/Experience.astro";
+import Projects from "../../components/sections/Projects.astro";
+import Skills from "../../components/sections/Skills.astro";
 
 let {altLang} = text_en;
 ---
@@ -15,4 +17,6 @@ let {altLang} = text_en;
   <Welcome i18n = {text_en.welcome}/>
   <About title={text_en.about.sectionTitle} content={text_en.about.content} />
   <Experience sectionTitle={text_en.experience.sectionTitle} expStrings={text_en.experience} />
+  <Skills sectionTitleLeft={text_en.skills.sectionTitle[0]} sectionTitleRight={text_en.skills.sectionTitle[1]} languages={text_en.languages}/>
+  <Projects sectionTitle={text_en.projects.sectionTitle} />
 </Layout>
