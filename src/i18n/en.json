@@ -49,6 +49,69 @@
     }
   ],
   "projects": {
-    "sectionTitle": "Projects"
+    "sectionTitle": "Projects",
+"item": [
+      {
+        "projectTitle": "Emotional Mitigation",
+        "projectDescription": "University Of Cundinamarca",
+        "projectYear": "2023",
+        "projectLinks":{
+          "code":"",
+          "demo":"",
+          "design":""
+        },
+        "techStack":[
+          "Collaborated with a team of systems engineers developing the front end of a recipe book to allow students to create, edit and share recipes.",
+          "Developed the front-end of a platform for freelancers focused on the recruitment and creation of medical services  using SCRUM methodology.",
+          "Experience with React.js to build several interactive SPAs."
+        ]
+      },
+      {
+        "projectTitle": "Emotional Mitigation",
+        "projectDescription": "University Of Cundinamarca",
+        "projectYear": "2023",
+        "projectLinks":{
+          "code":"",
+          "demo":"",
+          "design":""
+        },
+        "techStack":[
+          "Collaborated with a team of systems engineers developing the front end of a recipe book to allow students to create, edit and share recipes.",
+          "Developed the front-end of a platform for freelancers focused on the recruitment and creation of medical services  using SCRUM methodology.",
+          "Experience with React.js to build several interactive SPAs."
+        ]
+      },
+      {
+        "projectTitle": "Emotional Mitigation",
+        "projectDescription": "University Of Cundinamarca",
+        "projectYear": "2023",
+        "projectLinks":{
+          "code":"",
+          "demo":"",
+          "design":""
+        },
+        "techStack":[
+          "Collaborated with a team of systems engineers developing the front end of a recipe book to allow students to create, edit and share recipes.",
+          "Developed the front-end of a platform for freelancers focused on the recruitment and creation of medical services  using SCRUM methodology.",
+          "Experience with React.js to build several interactive SPAs."
+        ]
+      },
+      
+      {
+        "projectTitle": "Emotional Mitigation",
+        "projectDescription": "University Of Cundinamarca",
+        "projectYear": "2023",
+        "projectLinks":{
+          "code":"",
+          "demo":"",
+          "design":""
+        },
+        "techStack":[
+          "Collaborated with a team of systems engineers developing the front end of a recipe book to allow students to create, edit and share recipes.",
+          "Developed the front-end of a platform for freelancers focused on the recruitment and creation of medical services  using SCRUM methodology.",
+          "Experience with React.js to build several interactive SPAs."
+        ]
+      }
+    ]
   }
 }
