@@ -3,7 +3,7 @@ interface Props {
   altLang: string;
 }
 const {altLang = "EN"} = Astro.props
-import Button from "../Button.astro";
+import Button from "../ui/Button.astro";
 
 let link = altLang.toLowerCase();
 ---
