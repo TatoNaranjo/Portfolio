@@ -1,0 +1,43 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro';
+import ProjectModal from '../ui/ProjectCard.tsx';
+interface ProjectItem {
+    projectTitle: string;
+    projectDescription: string;
+    projectYear: string;
+    projectLinks:{
+        code:string;
+        demo?:string;
+        design?:string;
+    },
+    techStack: string[];
+}
+
+interface Props{
+    sectionTitle:string;
+    projectStrings:{
+        item: ProjectItem[];
+    }
+}
+const {sectionTitle, projectStrings} = Astro.props;
+---
+
+<section class="flex flex-col items-center justify-center md:items-start md:justify-between border-b-8 gap-8 px-6 py-9">
+<SectionTitle text={sectionTitle} />
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+
+{projectStrings.item.map((project) => (
+        <div class="">
+            <ProjectModal 
+                client:load
+                projectTitle={project.projectTitle}
+                projectYear={project.projectYear}
+                projectDescription={project.projectDescription}
+                projectLinks={project.projectLinks}
+                techStack={project.techStack}
+            />
+        </div>
+    ))}
+</div>
+</section>
