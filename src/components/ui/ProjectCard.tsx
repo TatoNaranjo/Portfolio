@@ -82,7 +82,7 @@ export default function ProjectModal({
                   </button>
                 ))}
               </div>
-              <div className="flex gap-4 flex-wrap mt-4 border-t-4 py-3 justify-center text-[32px] w-full">
+              <div className="flex gap-4 flex-wrap mt-4 border-t-4 py-3 justify-center text-xm md:text-[32px] w-full">
                 <a
                   href={projectLinks.code}
                   className="flex items-center gap-2 justify-center p-2 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-[16px bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]"
