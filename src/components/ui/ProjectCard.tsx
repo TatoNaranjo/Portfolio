@@ -34,11 +34,11 @@ export default function ProjectModal({
         className="border-4 flex flex-col cursor-pointer md:flex-row md:justify-between justify-center items-center p-6 w-full h-full hover:bg-gray-100 transition-discrete duration-500 ease-in-out gap-8"
       >
         <div className="flex md:justify-start flex-col md:text-start justify-center items-start gap-2">
-          <h2 className="md:text-[32px] w-full md:w-auto text-center">{projectTitle}</h2>
+          <h2 className="md:text-[32px] w-full md:w-auto text-center">{projectTitle || "Proyecto sin título"}</h2>
           <span className="text-xs md:text-[16px]">{shortDescription}</span>
         </div>
         <div>
-          <h4>{projectYear}</h4>
+          <span>{projectYear}</span>
         </div>
       </button>
 
@@ -54,7 +54,7 @@ export default function ProjectModal({
             <div className="bg-black flex justify-between items-center px-9 py-6 ">
               <div className="">
                 <h1 className="text-[16px] md:text-5xl text-white">
-                  {projectTitle}
+                  {projectTitle || "Proyecto sin título"}
                 </h1>
               </div>
 

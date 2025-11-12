@@ -1,6 +1,7 @@
 ---
 import SectionTitle from '../ui/SectionTitle.astro';
 import ProjectModal from '../ui/ProjectCard.tsx';
+
 interface ProjectItem {
     projectTitle: string;
     projectDescription: string;
@@ -22,7 +23,7 @@ interface Props{
 const {sectionTitle, projectStrings} = Astro.props;
 ---
 
-<section class="flex flex-col items-center justify-center md:items-start md:justify-between border-b-8 gap-8 px-6 py-9">
+<section class="flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-9">
 <SectionTitle text={sectionTitle} />
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
@@ -40,4 +41,5 @@ const {sectionTitle, projectStrings} = Astro.props;
         </div>
     ))}
 </div>
+
 </section>

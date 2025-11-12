@@ -104,5 +104,31 @@
         ]
       }
     ]
+  },
+  "education":{
+    "sectionTitle":"Education",
+    "item":[
+      {
+        "eduTitle":"E.I San Miguel Arcángel College",
+        "degree":"Baccaulareate",
+        "startDate":"2010",
+        "endDate":"2021",
+        "items":["HTML Web Design", "C++ Development With Arduino"]
+      },
+      {
+        "eduTitle":"University Of Cundinamarca",
+        "degree":"Undergraduate - Systems Engineering",
+        "startDate":"2021",
+        "endDate":"2026",
+        "items":["Programming & Software Development", "Systems Architectures & Relational / No Relational Databases"]
+      },
+      {
+        "eduTitle":"Oracle Next Education",
+        "degree":"Development Practices",
+        "startDate":"2023",
+        "endDate":"2024",
+        "items":["Hands-on projects that simulate real-world Scenarios", "Responsive Design & Web Accesibility"]
+      }
+    ]
   }
 }

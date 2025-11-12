@@ -1,0 +1,42 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro';
+import EducationCard from '../ui/EducationCard.astro';
+
+interface eduItem {
+    eduTitle:string;
+    degree:string;
+    startDate:string;
+    endDate:string;
+    items:string[];
+}
+
+interface Props{
+    sectionTitle:string;
+    eduStrings:{
+        item:eduItem[];
+    }
+
+}
+
+const {sectionTitle,eduStrings} = Astro.props;
+console.log(eduStrings)
+---
+
+<section class="flex flex-col items-center justify-center md:items-start md:justify-between border-b-8 gap-8 px-6 py-9">
+<SectionTitle text={sectionTitle} />
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+
+    {eduStrings.item.map((item)=>(
+        <EducationCard
+        eduTitle={item.eduTitle}
+        degree={item.degree}
+        startDate={item.startDate}
+        endDate={item.endDate}
+        items={item.items}
+        />
+    ))}
+</div>
+
+
+</section>

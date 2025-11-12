@@ -1,0 +1,24 @@
+---
+interface Props {
+    eduTitle:string;
+    degree:string;
+    startDate:string;
+    endDate:string;
+    items:string[];
+}
+
+const {eduTitle, degree, startDate, endDate,items} = Astro.props
+---
+
+<div class="flex flex-col border-4 px-[18px] py-2 gap-4 text-center md:text-start">
+    <div class="border-b-4 my-3">
+        <h1 class="text-[24px] md:text-[32px]">{eduTitle}</h1>
+    </div>
+    <span class="font-bold">{degree} - ({startDate}-{endDate})</span>
+
+                    <ul class="list-disc list-inside flex flex-col grow justify-center text-[12px] md:text-[18px] p-6">
+                    {items.map((item) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+</div>

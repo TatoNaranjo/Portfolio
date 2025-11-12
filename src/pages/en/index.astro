@@ -1,13 +1,14 @@
 ---
+import "../../styles/global.css";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/sections/Header.astro";
 import Welcome from "../../components/sections/Welcome.astro";
 import About from "../../components/sections/About.astro";
-import "../../styles/global.css";
 import text_en from "../../i18n/en.json"
 import Experience from "../../components/sections/Experience.astro";
 import Projects from "../../components/sections/Projects.astro";
 import Skills from "../../components/sections/Skills.astro";
+import Education from "../../components/sections/Education.astro";
 
 let {altLang} = text_en;
 ---
@@ -19,4 +20,5 @@ let {altLang} = text_en;
   <Experience sectionTitle={text_en.experience.sectionTitle} expStrings={text_en.experience} />
   <Skills sectionTitleLeft={text_en.skills.sectionTitle[0]} sectionTitleRight={text_en.skills.sectionTitle[1]} languages={text_en.languages}/>
   <Projects sectionTitle={text_en.projects.sectionTitle} projectStrings={text_en.projects}/>
+  <Education sectionTitle={text_en.education.sectionTitle} eduStrings={text_en.education}/>
 </Layout>
