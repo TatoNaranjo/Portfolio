@@ -53,63 +53,54 @@
 "item": [
       {
         "projectTitle": "Emotional Mitigation",
-        "projectDescription": "University Of Cundinamarca",
-        "projectYear": "2023",
+        "projectDescription": "Python + Keras Deep Learning Model to recognize and detect emotions on a song and recommend an opposite sentiment based playlist",
+        "projectYear": "2025",
         "projectLinks":{
           "code":"",
           "demo":"",
           "design":""
         },
         "techStack":[
-          "Collaborated with a team of systems engineers developing the front end of a recipe book to allow students to create, edit and share recipes.",
-          "Developed the front-end of a platform for freelancers focused on the recruitment and creation of medical services  using SCRUM methodology.",
-          "Experience with React.js to build several interactive SPAs."
+          "React", "Node.JS","Python","Keras","Tensorflow","TypeScript","Django"
         ]
       },
       {
-        "projectTitle": "Emotional Mitigation",
-        "projectDescription": "University Of Cundinamarca",
-        "projectYear": "2023",
+        "projectTitle": "Aurora",
+        "projectDescription": "This system has been developed as part of a research project at the University of Cundinamarca Extension Facatativá, with the aim of providing students in the Psychology program with a support tool for the diagnosis of depressive disorders.Using advanced machine learning techniques, the system analyzes clinical data to identify patterns and risk factors associated with depressive disorders, providing a complementary tool to professional clinical judgment.",
+        "projectYear": "2025",
         "projectLinks":{
           "code":"",
           "demo":"",
           "design":""
         },
         "techStack":[
-          "Collaborated with a team of systems engineers developing the front end of a recipe book to allow students to create, edit and share recipes.",
-          "Developed the front-end of a platform for freelancers focused on the recruitment and creation of medical services  using SCRUM methodology.",
-          "Experience with React.js to build several interactive SPAs."
+          "React", "Node.JS","Python","TypeScript","Django", "Figma", "Visual Paradigm"
         ]
       },
       {
-        "projectTitle": "Emotional Mitigation",
-        "projectDescription": "University Of Cundinamarca",
-        "projectYear": "2023",
+        "projectTitle": "Butterfly Recognition w/ Back Propagation",
+        "projectDescription": "Python + Keras Deep Learning Model to recognize and detect emotions on a song and recommend an opposite sentiment based playlist",
+        "projectYear": "2025",
         "projectLinks":{
           "code":"",
           "demo":"",
           "design":""
         },
         "techStack":[
-          "Collaborated with a team of systems engineers developing the front end of a recipe book to allow students to create, edit and share recipes.",
-          "Developed the front-end of a platform for freelancers focused on the recruitment and creation of medical services  using SCRUM methodology.",
-          "Experience with React.js to build several interactive SPAs."
+          "React", "Node.JS","Python","Keras","Tensorflow","TypeScript","Django"
         ]
       },
-      
       {
-        "projectTitle": "Emotional Mitigation",
-        "projectDescription": "University Of Cundinamarca",
-        "projectYear": "2023",
+        "projectTitle": "Tato's Roguelike",
+        "projectDescription": "Python + Keras Deep Learning Model to recognize and detect emotions on a song and recommend an opposite sentiment based playlist",
+        "projectYear": "2024",
         "projectLinks":{
           "code":"",
           "demo":"",
           "design":""
         },
         "techStack":[
-          "Collaborated with a team of systems engineers developing the front end of a recipe book to allow students to create, edit and share recipes.",
-          "Developed the front-end of a platform for freelancers focused on the recruitment and creation of medical services  using SCRUM methodology.",
-          "Experience with React.js to build several interactive SPAs."
+          "Python"
         ]
       }
     ]
