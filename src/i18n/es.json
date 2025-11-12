@@ -1,3 +1,167 @@
 {
-  "altLang": "en"
+  "altLang": "en",
+  "welcome": {
+    "badgeInfo": "Desarrollador Web",
+    "contact": "contacto"
+  },
+  "about": {
+    "sectionTitle": "Sobre Mí",
+    "content": "Ingeniero de Sistemas y Computación y Desarrollador Web con experiencia en metodologías ágiles. Competente en tecnologías como JavaScript, Python, React, Node.js y bases de datos relacionales y no relacionales. Historial comprobado en la resolución eficiente de problemas, con capacidad demostrada para adaptarse rápidamente a nuevas tecnologías y entornos de desarrollo."
+  },
+  "experience": {
+    "sectionTitle": "Experiencia",
+    "item": [
+      {
+        "role": "Desarrollador Junior",
+        "company": "Universidad De Cundinamarca",
+        "duration": "2+ Años",
+        "imgName": "coffee.png",
+        "items": [
+          "Colaboré con un equipo de ingenieros de sistemas en el desarrollo del front-end de un libro de recetas para permitir a los estudiantes crear, editar y compartir recetas.",
+          "Desarrollé el front-end de una plataforma para freelancers enfocada en el reclutamiento y creación de servicios médicos utilizando la metodología SCRUM.",
+          "Experiencia con React.js en la construcción de varias SPAs (Aplicaciones de Página Única) interactivas."
+        ]
+      },
+      {
+        "role": "Tutor de Algoritmos y Programador Competitivo",
+        "company": "Universidad De Cundinamarca",
+        "duration": "Abril 2022 - Actualidad",
+        "imgName": "comp.png",
+        "items": [
+          "Impartir tutorías de programación competitiva en C++ y Python, guiando a los estudiantes para mejorar sus habilidades en algoritmos y estructuras de datos.",
+          "Mantenerse actualizado mediante investigación exhaustiva y revisión constante de documentación técnica relacionada con algoritmos y estructuras de datos.",
+          "Participante activo en competencias nacionales e internacionales, como ICPC, CCPL, Codeforces Divs y RPC."
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "sectionTitle": [
+      "Habilidades",
+      "Idiomas"
+    ]
+  },
+  "languages": [
+    {
+      "language": "Español",
+      "level": "Nativo"
+    },
+    {
+      "language": "Inglés",
+      "level": "C1"
+    }
+  ],
+  "projects": {
+    "sectionTitle": "Proyectos",
+    "item": [
+      {
+        "projectTitle": "Mitigación Emocional",
+        "projectDescription": "Modelo de Deep Learning (Aprendizaje Profundo) con Python + Keras para reconocer y detectar emociones en una canción y recomendar una lista de reproducción basada en sentimientos opuestos.",
+        "projectYear": "2025",
+        "projectLinks": {
+          "code": "",
+          "demo": "",
+          "design": ""
+        },
+        "techStack": [
+          "React",
+          "Node.JS",
+          "Python",
+          "Keras",
+          "Tensorflow",
+          "TypeScript",
+          "Django"
+        ]
+      },
+      {
+        "projectTitle": "Aurora",
+        "projectDescription": "Este sistema ha sido desarrollado como parte de un proyecto de investigación en la Universidad de Cundinamarca Extensión Facatativá, con el objetivo de brindar a los estudiantes del programa de Psicología una herramienta de apoyo para el diagnóstico de trastornos depresivos. Utilizando técnicas avanzadas de machine learning, el sistema analiza datos clínicos para identificar patrones y factores de riesgo asociados con trastornos depresivos, proporcionando una herramienta complementaria al juicio clínico profesional.",
+        "projectYear": "2025",
+        "projectLinks": {
+          "code": "",
+          "demo": "",
+          "design": ""
+        },
+        "techStack": [
+          "React",
+          "Node.JS",
+          "Python",
+          "TypeScript",
+          "Django",
+          "Figma",
+          "Visual Paradigm"
+        ]
+      },
+      {
+        "projectTitle": "Reconocimiento de Mariposas con Retropropagación",
+        "projectDescription": "Modelo de Deep Learning (Aprendizaje Profundo) con Python + Keras para reconocer y detectar emociones en una canción y recomendar una lista de reproducción basada en sentimientos opuestos.",
+        "projectYear": "2025",
+        "projectLinks": {
+          "code": "",
+          "demo": "",
+          "design": ""
+        },
+        "techStack": [
+          "React",
+          "Node.JS",
+          "Python",
+          "Keras",
+          "Tensorflow",
+          "TypeScript",
+          "Django"
+        ]
+      },
+      {
+        "projectTitle": "Tato's Roguelike",
+        "projectDescription": "Modelo de Deep Learning (Aprendizaje Profundo) con Python + Keras para reconocer y detectar emociones en una canción y recomendar una lista de reproducción basada en sentimientos opuestos.",
+        "projectYear": "2024",
+        "projectLinks": {
+          "code": "",
+          "demo": "",
+          "design": ""
+        },
+        "techStack": [
+          "Python"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "sectionTitle": "Educación",
+    "item": [
+      {
+        "eduTitle": "Colegio E.I San Miguel Arcángel",
+        "degree": "Bachillerato",
+        "startDate": "2010",
+        "endDate": "2021",
+        "items": [
+          "Diseño Web HTML",
+          "Desarrollo C++ con Arduino"
+        ]
+      },
+      {
+        "eduTitle": "Universidad De Cundinamarca",
+        "degree": "Pregrado - Ingeniería de Sistemas",
+        "startDate": "2021",
+        "endDate": "2026",
+        "items": [
+          "Programación y Desarrollo de Software",
+          "Arquitecturas de Sistemas y Bases de Datos Relacionales / No Relacionales"
+        ]
+      },
+      {
+        "eduTitle": "Oracle Next Education",
+        "degree": "Prácticas de Desarrollo",
+        "startDate": "2023",
+        "endDate": "2024",
+        "items": [
+          "Proyectos prácticos que simulan escenarios del mundo real",
+          "Diseño Responsivo y Accesibilidad Web"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "subtitle": "Desarrollador Web"
+  }
 }
