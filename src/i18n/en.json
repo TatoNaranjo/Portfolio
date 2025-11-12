@@ -130,5 +130,8 @@
         "items":["Hands-on projects that simulate real-world Scenarios", "Responsive Design & Web Accesibility"]
       }
     ]
+  },
+  "footer":{
+    "subtitle":"Web Developer"
   }
 }
