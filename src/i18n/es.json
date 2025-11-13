@@ -75,7 +75,7 @@
       },
       {
         "projectTitle": "Mitigación Emocional",
-        "projectDescription": "Modelo de Deep Learning (Aprendizaje Profundo) con Python + Keras para reconocer y detectar emociones en una canción y recomendar una lista de reproducción basada en sentimientos opuestos.",
+        "projectDescription": "Este proyecto es una aplicación web full-stack diseñada para la detección y mitigación emocional a través de la música. El núcleo del sistema es un modelo de Deep Learning (Red Neuronal Densa con TensorFlow/Keras) que analiza las características de audio de una canción para clasificarla en tres emociones: Ira, Tristeza o Felicidad. El backend, construido en Python con Flask, sirve este modelo y se conecta a la API de Spotify (Spotipy) para recomendar playlists de mitigación que ayuden al usuario a regular su estado de ánimo. El proyecto va más allá de la demo principal, ofreciendo un dashboard de métricas (construido con Chart.js) para evaluar el rendimiento del modelo y una línea de tiempo de trazabilidad interactiva. Esta última documenta el proceso completo de investigación y las decisiones de ingeniería, incluyendo el pivoteo desde un modelo CNN fallido a la solución DNN actual, demostrando un ciclo de vida de desarrollo de ML completo.",
         "projectYear": "2025",
         "projectLinks": {
           "code": "https://github.com/TatoNaranjo/MitigacionEmocionalDL",
@@ -94,7 +94,7 @@
       },
       {
         "projectTitle": "Reconocimiento de Mariposas con Retropropagación",
-        "projectDescription": "Modelo de Deep Learning (Aprendizaje Profundo) con Python + Keras para reconocer y detectar emociones en una canción y recomendar una lista de reproducción basada en sentimientos opuestos.",
+        "projectDescription": "Desarrollé una aplicación de escritorio completa con MATLAB App Designer para la clasificación de mariposas; La herramienta principal permite al usuario cargar una imagen y, mediante un modelo de red neuronal entrenado, el sistema identifica y predice la especie de la mariposa. El proyecto demuestra un flujo de trabajo de machine learning de principio a fin. Además de la app de clasificación, creé módulos independientes para el entrenamiento del modelo y para el procesamiento de imágenes. Esta última utilidad permite cargar y aplicar dinámicamente diferentes kernels (definidos en un JSON) para visualizar cómo los filtros afectan a la extracción de características.",
         "projectYear": "2025",
         "projectLinks": {
           "code": "https://github.com/TatoNaranjo/BPMariposas",
@@ -102,13 +102,7 @@
           "design": "https://github.com/TatoNaranjo/BPMariposas"
         },
         "techStack": [
-          "React",
-          "Node.JS",
-          "Python",
-          "Keras",
-          "Tensorflow",
-          "TypeScript",
-          "Django"
+          "MatLab"
         ]
       },
       {

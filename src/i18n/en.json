@@ -65,8 +65,8 @@
         ]
       },
       {
-        "projectTitle": "Emotional Mitigation",
-        "projectDescription": "Python + Keras Deep Learning Model to recognize and detect emotions on a song and recommend an opposite sentiment based playlist",
+        "projectTitle": "Emotional Mitigation Playlist Recomendator W/ Spotify Playlists",
+        "projectDescription": "I developed a complete desktop application with MATLAB App Designer for butterfly classification. The main tool allows the user to upload an image, and using a trained neural network model, the system identifies and predicts the butterfly species. The project demonstrates an end-to-end machine learning workflow. In addition to the classification app, I created separate modules for model training and image processing. The latter utility allows you to dynamically load and apply different kernels (defined in a JSON) to visualize how filters affect feature extraction.",
         "projectYear": "2025",
         "projectLinks":{
           "code":"https://github.com/TatoNaranjo/MitigacionEmocionalDL",
@@ -79,7 +79,7 @@
       },
       {
         "projectTitle": "Butterfly Recognition w/ Back Propagation",
-        "projectDescription": "Python + Keras Deep Learning Model to recognize and detect emotions on a song and recommend an opposite sentiment based playlist",
+        "projectDescription": "I developed a complete desktop application with MATLAB App Designer for butterfly classification, the main tool allows the user to upload an image, and using a trained neural network model; the system identifies and predicts the butterfly species. The project demonstrates an end-to-end machine learning workflow. In addition to the classification app, I created separate modules for model training and image processing. The latter utility allows you to dynamically load and apply different kernels (defined in a JSON) to visualize how filters affect feature extraction.",
         "projectYear": "2025",
         "projectLinks":{
           "code":"https://github.com/TatoNaranjo/BPMariposas",
@@ -87,7 +87,7 @@
           "design":"https://github.com/TatoNaranjo/BPMariposas"
         },
         "techStack":[
-          "React", "Node.JS","Python","Keras","Tensorflow","TypeScript","Django"
+          "MatLab"
         ]
       },
       {
