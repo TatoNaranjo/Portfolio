@@ -2,7 +2,7 @@
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
 import { Image } from 'astro:assets';
-import MePhoto from "../../assets/images/me.png";
+import MePhoto from "../../assets/images/me.jpg";
 import X from "../../assets/xSVG.svg";
 interface Props {
     i18n: {
@@ -63,7 +63,7 @@ const logoList = [
 <div class="photoFrame flex flex-col gap-4 md:flex-row justify-center items-center md:relative">
     <div>
         <X class="absolute top-[-10%] left-[-14.5%] w-[89px] h-[89px] max-sm:hidden"/>
-        <Image src={MePhoto} alt="Santiago Naranjo Herrera" width={189} height={247} class="md:h-[396px] md:w-[304px] border-4 border-black object-fit " priority/>
+        <Image src={MePhoto} alt="Santiago Naranjo Herrera" width={304} height={396} class="md:h-[396px] md:w-[304px] border-4 border-black object-fit " priority/>
     </div>
     <div class="logoContainers flex flex-wrap justify-center gap-3 items-center">
         
