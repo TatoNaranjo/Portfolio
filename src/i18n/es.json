@@ -54,33 +54,14 @@
   "projects": {
     "sectionTitle": "Proyectos",
     "item": [
-      {
-        "projectTitle": "Mitigación Emocional",
-        "projectDescription": "Modelo de Deep Learning (Aprendizaje Profundo) con Python + Keras para reconocer y detectar emociones en una canción y recomendar una lista de reproducción basada en sentimientos opuestos.",
-        "projectYear": "2025",
-        "projectLinks": {
-          "code": "",
-          "demo": "",
-          "design": ""
-        },
-        "techStack": [
-          "React",
-          "Node.JS",
-          "Python",
-          "Keras",
-          "Tensorflow",
-          "TypeScript",
-          "Django"
-        ]
-      },
-      {
+            {
         "projectTitle": "Aurora",
         "projectDescription": "Este sistema ha sido desarrollado como parte de un proyecto de investigación en la Universidad de Cundinamarca Extensión Facatativá, con el objetivo de brindar a los estudiantes del programa de Psicología una herramienta de apoyo para el diagnóstico de trastornos depresivos. Utilizando técnicas avanzadas de machine learning, el sistema analiza datos clínicos para identificar patrones y factores de riesgo asociados con trastornos depresivos, proporcionando una herramienta complementaria al juicio clínico profesional.",
         "projectYear": "2025",
         "projectLinks": {
-          "code": "",
-          "demo": "",
-          "design": ""
+          "code": "https://github.com/TatoNaranjo/Aurora-Front-End",
+          "demo": "https://github.com/TatoNaranjo/Aurora-Front-End",
+          "design": "https://www.figma.com/design/jnKeC3tEU6BbSCyhXHAmtJ/Clasificaci%C3%B3n-de-Trastornos?node-id=19-36&t=ROUEE81pPpLn6lxA-1"
         },
         "techStack": [
           "React",
@@ -93,13 +74,32 @@
         ]
       },
       {
+        "projectTitle": "Mitigación Emocional",
+        "projectDescription": "Modelo de Deep Learning (Aprendizaje Profundo) con Python + Keras para reconocer y detectar emociones en una canción y recomendar una lista de reproducción basada en sentimientos opuestos.",
+        "projectYear": "2025",
+        "projectLinks": {
+          "code": "https://github.com/TatoNaranjo/MitigacionEmocionalDL",
+          "demo": "https://github.com/TatoNaranjo/MitigacionEmocionalDL",
+          "design": "https://github.com/TatoNaranjo/MitigacionEmocionalDL"
+        },
+        "techStack": [
+          "React",
+          "Node.JS",
+          "Python",
+          "Keras",
+          "Tensorflow",
+          "TypeScript",
+          "Django"
+        ]
+      },
+      {
         "projectTitle": "Reconocimiento de Mariposas con Retropropagación",
         "projectDescription": "Modelo de Deep Learning (Aprendizaje Profundo) con Python + Keras para reconocer y detectar emociones en una canción y recomendar una lista de reproducción basada en sentimientos opuestos.",
         "projectYear": "2025",
         "projectLinks": {
-          "code": "",
-          "demo": "",
-          "design": ""
+          "code": "https://github.com/TatoNaranjo/BPMariposas",
+          "demo": "https://github.com/TatoNaranjo/BPMariposas",
+          "design": "https://github.com/TatoNaranjo/BPMariposas"
         },
         "techStack": [
           "React",
@@ -116,9 +116,9 @@
         "projectDescription": "Modelo de Deep Learning (Aprendizaje Profundo) con Python + Keras para reconocer y detectar emociones en una canción y recomendar una lista de reproducción basada en sentimientos opuestos.",
         "projectYear": "2024",
         "projectLinks": {
-          "code": "",
-          "demo": "",
-          "design": ""
+          "code": "https://github.com/TatoNaranjo/ElRoguelikeDeTato",
+          "demo": "https://github.com/TatoNaranjo/ElRoguelikeDeTato",
+          "design": "https://github.com/TatoNaranjo/ElRoguelikeDeTato"
         },
         "techStack": [
           "Python"

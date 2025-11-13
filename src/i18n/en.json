@@ -51,30 +51,30 @@
   "projects": {
     "sectionTitle": "Projects",
 "item": [
+        {
+        "projectTitle": "Aurora",
+        "projectDescription": "This system has been developed as part of a research project at the University of Cundinamarca Extension Facatativá, with the aim of providing students in the Psychology program with a support tool for the diagnosis of depressive disorders.Using advanced machine learning techniques, the system analyzes clinical data to identify patterns and risk factors associated with depressive disorders, providing a complementary tool to professional clinical judgment.",
+        "projectYear": "2025",
+        "projectLinks":{
+          "code":"https://github.com/TatoNaranjo/Aurora-Front-End",
+          "demo":"https://github.com/TatoNaranjo/Aurora-Front-End",
+          "design":"https://www.figma.com/design/jnKeC3tEU6BbSCyhXHAmtJ/Clasificaci%C3%B3n-de-Trastornos?node-id=19-36&t=ROUEE81pPpLn6lxA-1"
+        },
+        "techStack":[
+          "React", "Node.JS","Python","TypeScript","Django", "Figma", "Visual Paradigm"
+        ]
+      },
       {
         "projectTitle": "Emotional Mitigation",
         "projectDescription": "Python + Keras Deep Learning Model to recognize and detect emotions on a song and recommend an opposite sentiment based playlist",
         "projectYear": "2025",
         "projectLinks":{
-          "code":"",
-          "demo":"",
-          "design":""
+          "code":"https://github.com/TatoNaranjo/MitigacionEmocionalDL",
+          "demo":"https://github.com/TatoNaranjo/MitigacionEmocionalDL",
+          "design":"https://github.com/TatoNaranjo/MitigacionEmocionalDL"
         },
         "techStack":[
           "React", "Node.JS","Python","Keras","Tensorflow","TypeScript","Django"
-        ]
-      },
-      {
-        "projectTitle": "Aurora",
-        "projectDescription": "This system has been developed as part of a research project at the University of Cundinamarca Extension Facatativá, with the aim of providing students in the Psychology program with a support tool for the diagnosis of depressive disorders.Using advanced machine learning techniques, the system analyzes clinical data to identify patterns and risk factors associated with depressive disorders, providing a complementary tool to professional clinical judgment.",
-        "projectYear": "2025",
-        "projectLinks":{
-          "code":"",
-          "demo":"",
-          "design":""
-        },
-        "techStack":[
-          "React", "Node.JS","Python","TypeScript","Django", "Figma", "Visual Paradigm"
         ]
       },
       {
@@ -82,9 +82,9 @@
         "projectDescription": "Python + Keras Deep Learning Model to recognize and detect emotions on a song and recommend an opposite sentiment based playlist",
         "projectYear": "2025",
         "projectLinks":{
-          "code":"",
-          "demo":"",
-          "design":""
+          "code":"https://github.com/TatoNaranjo/BPMariposas",
+          "demo":"https://github.com/TatoNaranjo/BPMariposas",
+          "design":"https://github.com/TatoNaranjo/BPMariposas"
         },
         "techStack":[
           "React", "Node.JS","Python","Keras","Tensorflow","TypeScript","Django"
@@ -95,9 +95,9 @@
         "projectDescription": "Python + Keras Deep Learning Model to recognize and detect emotions on a song and recommend an opposite sentiment based playlist",
         "projectYear": "2024",
         "projectLinks":{
-          "code":"",
-          "demo":"",
-          "design":""
+          "code":"https://github.com/TatoNaranjo/ElRoguelikeDeTato",
+          "demo":"https://github.com/TatoNaranjo/ElRoguelikeDeTato",
+          "design":"https://rogueliketutorials.com/tutorials/tcod/v2/extras/traditional-look/"
         },
         "techStack":[
           "Python"
