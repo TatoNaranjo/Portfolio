@@ -3,6 +3,8 @@
 @theme{
 
   --animate-movelogo: moveLogo 3s ease-in-out infinite;
+  --animate-float-slow:float 6s ease-in-out infinite;
+  --animate-float-fast:float 4s ease-in-out infinite;
 
 @keyframes moveLogo {
   0% {
@@ -12,7 +14,15 @@
     transform: translateY(12px);
   }
 }
+
+@keyframes float{
+          0%, 100%
+          { transform: translateY(0px) }
+          50%
+          { transform: translateY(-10px) }
+        }
 }
+
 
 :root {
   --titleFont: "Bebas Neue", sans-serif;

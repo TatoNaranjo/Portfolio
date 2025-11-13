@@ -4,6 +4,7 @@ import Icon from '../ui/Icon.astro';
 import { Image } from 'astro:assets';
 import MePhoto from "../../assets/images/me.webp";
 import X from "../../assets/xSVG.svg";
+
 interface Props {
     i18n: {
         badgeInfo: string;
@@ -14,12 +15,12 @@ interface Props {
 const { i18n } = Astro.props;
 const {badgeInfo, contact} = i18n;
 
-const logoStyles ="w-[32px] h-[32px] hover:w-[48px] hover:h-[48px] transition-all duration-300 ease-in-out";
+const logoStyles ="w-[32px] h-[32px] md:hover:w-[48px] md:hover:h-[48px] transition-all duration-300 ease-in-out";
 
 const logoList = [
-    { name: "apple", pos: "md:absolute md:top-[-12%] md:left-[80%]" },
-    { name: "arch", pos: "md:absolute md:top-[0%] md:right-[-10%]" },
-    { name: "spotify", pos: "md:absolute md:top-[-10%] md:left-[95%]" },
+    { name: "apple", pos: "md:absolute md:top-[-12%] md:left-[80%]", anim: "animate-float-fast" },
+    { name: "arch", pos: "md:absolute md:top-[0%] md:right-[-10%]", anim: "animate-float-slow" },
+    { name: "spotify", pos: "md:absolute md:top-[-10%] md:left-[95%]", anim: "animate-float-fast" },
 
     /* 
     Left top Corner Logo Positions
@@ -27,23 +28,23 @@ const logoList = [
     Left Side First Column: Left -15%
     Left Side Second Column: Left-30%
     */
-    { name: "figma", pos: "md:absolute md:top-[50%] md:left-[-15%]" },
-    { name: "node", pos: "md:absolute md:top-[58%] md:left-[-30%]" },
-    { name: "obsidian", pos: "md:absolute md:top-[66%] md:left-[-15%]" },
-    { name: "markdown", pos: "md:absolute md:top-[74%] md:left-[-30%]" },
-    { name: "react", pos: "md:absolute md:top-[82%] md:left-[-15%]" },
-    { name: "typescript", pos: "md:absolute md:top-[90%] md:left-[-30%]" },
-    { name: "latex", pos: "md:absolute md:top-[98%] md:left-[-15%]" },
+    { name: "figma", pos: "md:absolute md:top-[50%] md:left-[-15%]" , anim: "animate-float-slow"},
+    { name: "node", pos: "md:absolute md:top-[58%] md:left-[-30%]", anim: "animate-float-fast" },
+    { name: "obsidian", pos: "md:absolute md:top-[66%] md:left-[-15%]", anim: "animate-float-fast" },
+    { name: "markdown", pos: "md:absolute md:top-[74%] md:left-[-30%]", anim: "animate-float-slow" },
+    { name: "react", pos: "md:absolute md:top-[82%] md:left-[-15%]", anim: "animate-float-slow" },
+    { name: "typescript", pos: "md:absolute md:top-[90%] md:left-[-30%]" , anim: "animate-float-fast"},
+    { name: "latex", pos: "md:absolute md:top-[98%] md:left-[-15%]", anim: "animate-float-slow" },
 
     /* Bottom Left Logo Positions */
-    { name: "python", pos: "md:absolute md:top-[105%] md:left-[0%]" },
-    { name: "tailwind", pos: "md:absolute md:top-[110%] md:left-[15%]" },
-    { name: "javascript", pos: "md:absolute md:top-[105%] md:left-[30%]" }
+    { name: "python", pos: "md:absolute md:top-[105%] md:left-[0%]", anim: "animate-float-fast" },
+    { name: "tailwind", pos: "md:absolute md:top-[110%] md:left-[15%]", anim: "animate-float-slow" },
+    { name: "javascript", pos: "md:absolute md:top-[105%] md:left-[30%]", anim: "animate-float-fast" }
 ];
 ---
 
 <section class="welcomeContainer flex md:justify-around flex-col md:flex-row justify-center items-center gap-4 md:gap-16 p-8 md:p-16 md:mb-6">
-<div class="infoContainer flex items-center md:items-start flex-col gap-2.5 py-4 px-2 ">
+<div class="infoContainer flex items-center md:items-start flex-col gap-2.5 py-4 px-2" transition:animate="slide">
     <div class="badgeContainer flex border-4 border-black w-fit h-fit py-2 px-6 shadow-[0px_4px_0_0_#000]">
         {badgeInfo}
     </div>
@@ -56,7 +57,7 @@ const logoList = [
     <div class="contactContainer flex flex-wrap gap-4 justify-center items-center md:justify-start mt-4 md:mt-0 md:pr-[30px]">
         <Button text={contact} href="mailto:naranjosa2004@gmail.com"/>
         <Button text='Github' href='https://github.com/TatoNaranjo' variant='white'/>
-        <Button text='+54 3143109118' href='https://wa.me/3143109118' variant='white'/>
+        <Button text='+57 3143109118' href='https://wa.me/3143109118' variant='white'/>
     </div>
 </div>
 
@@ -70,7 +71,7 @@ const logoList = [
         {logoList.map(logo =>(
            <Icon 
                 name={logo.name} 
-                className={`${logoStyles} ${logo.pos}`}
+                className={`${logoStyles} ${logo.pos} ${logo.anim}`}
             />
         ))}
     </div>
