@@ -12,7 +12,11 @@ export default defineConfig({
   i18n: {
     locales: ["es", "en"],
     defaultLocale: "en",
+    routing: {
+      prefixDefaultLocale: true
+    }
   },
+  
   integrations: [react()],
 
   vite:{
