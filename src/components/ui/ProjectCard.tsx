@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 interface Props {
+  lang: 'en' | 'es';
   projectTitle: string;
   projectDescription: string;
   projectYear: string;
@@ -13,6 +14,7 @@ interface Props {
 }
 
 export default function ProjectModal({
+  lang,
   projectTitle,
   projectDescription,
   projectYear,
@@ -25,6 +27,7 @@ export default function ProjectModal({
   const closeModal = () => setIsOpen(false);
   const index = projectDescription.indexOf(".");
   const shortDescription = (index!=-1?projectDescription.substring(0,index+1):projectDescription);
+  
 
   return (
     <>
@@ -34,7 +37,7 @@ export default function ProjectModal({
         className="border-4 flex flex-col cursor-pointer md:flex-row md:justify-between justify-center items-center p-6 w-full h-full hover:bg-gray-100 transition-discrete duration-500 ease-in-out gap-8"
       >
         <div className="flex md:justify-start flex-col md:text-start justify-center items-start gap-2">
-          <h2 className="md:text-[32px] w-full md:w-auto text-center">{projectTitle || "Proyecto sin título"}</h2>
+          <h2 className="md:text-[32px] w-full md:w-auto text-center md:text-start">{projectTitle || "Proyecto sin título"}</h2>
           <span className="text-xs md:text-[16px]">{shortDescription}</span>
         </div>
         <div>
@@ -68,7 +71,7 @@ export default function ProjectModal({
 
             <div className="px-6 py-7 flex flex-col items-center hover:border-black h-full  max-h-[70vh] md:max-h-auto overflow-scroll md:overflow-auto">
               <div className="pb-3">
-                <h2 className="border-b-4 text-[20px] md:text-[48px] md:w-fit md:mb-4 ">Description</h2>
+                <h2 className="border-b-4 text-[20px] md:text-[48px] md:w-fit md:mb-4">{lang === "en" ? "Description" : "Descripción"}</h2>
                 <span className="text-[12px] md:text-[20px]">{projectDescription}</span>
               </div>
 
@@ -107,7 +110,7 @@ export default function ProjectModal({
                       <path d="M9 19c-1.41 0 -2.84 -0.56 -3.69 -1.19c-0.84 -0.63 -1.09 -1.66 -2.31 -2.31" />
                     </g>
                   </svg>
-                  Code
+                  {lang === "en" ? "Code" : "Código"}
                 </a>
                 <a
                   href={projectLinks.demo}
@@ -126,7 +129,7 @@ export default function ProjectModal({
                       d="M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6v2H5v12h12v-6zM13 3v2h4.586l-7.793 7.793l1.414 1.414L19 6.414V11h2V3z"
                     />
                   </svg>
-                  Demo
+                  {lang === "en" ? "Demo" : "Demostración"}
                 </a>
                 <a
                   href={projectLinks.design}
@@ -147,7 +150,7 @@ export default function ProjectModal({
                       clipRule="evenodd"
                     />
                   </svg>
-                  Design
+                  {lang === "en" ? "Design" : "Diseño"}
                 </a>
               </div>
             </div>

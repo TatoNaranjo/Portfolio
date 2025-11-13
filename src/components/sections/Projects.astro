@@ -1,4 +1,5 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import SectionTitle from '../ui/SectionTitle.astro';
 import ProjectModal from '../ui/ProjectCard.tsx';
 
@@ -21,6 +22,9 @@ interface Props{
     }
 }
 const {sectionTitle, projectStrings} = Astro.props;
+const path = Astro.url.pathname;
+const currentLang = path.startsWith('/en') ? 'en' : 'es';
+console.log("xd", currentLang)
 ---
 
 <section class="flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-9">
@@ -37,6 +41,7 @@ const {sectionTitle, projectStrings} = Astro.props;
                 projectDescription={project.projectDescription}
                 projectLinks={project.projectLinks}
                 techStack={project.techStack}
+                lang={currentLang}
             />
         </div>
     ))}
