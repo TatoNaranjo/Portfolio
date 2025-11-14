@@ -44,11 +44,13 @@
   "languages": [
     {
       "language": "Español",
-      "level": "Nativo"
+      "level": "Nativo",
+      "certificate":""
     },
     {
       "language": "Inglés",
-      "level": "C1"
+      "level": "C1",
+      "certificate":"https://cert.efset.org/2yp1Ke"
     }
   ],
   "projects": {

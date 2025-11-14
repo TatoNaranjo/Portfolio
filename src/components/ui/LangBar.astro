@@ -4,11 +4,12 @@ import Button from './Button.astro';
 interface Props {
     language: string;
     level:string;
+    certificate?:string | "#skills";
 }
-const {language, level} = Astro.props;
+const {language, level, certificate} = Astro.props;
 ---
 
 <div class="flex md:items-center flex-col gap-3 md:flex-row border-4 text-center justify-between px-4 py-2">
     <span class="md:text-2xl uppercase font-bold">{language}</span>
-    <Button text={level} href="#Skills" className='pointer-events-none' />
+    <Button text={level} href={`${certificate}`} className={certificate==""?"pointer-events-none":""} />
 </div>

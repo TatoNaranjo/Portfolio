@@ -5,7 +5,7 @@ import LangBar from '../ui/LangBar.astro';
 interface Props{
     sectionTitleLeft:string;
     sectionTitleRight:string;
-    languages: {language:string; level:string}[];
+    languages: {language:string; level:string; certificate:string;}[];
 }
 
 const {sectionTitleLeft, sectionTitleRight,languages} = Astro.props;
@@ -27,7 +27,7 @@ const skillsList = ["JavaScript", "React", "TypeScript", "Python", "Node.js", "T
     <SectionTitle text={sectionTitleRight} />
     <div class="w-full flex flex-col gap-3">
         {languages.map((lang) => (
-            <LangBar language={lang.language} level={lang.level} />
+            <LangBar language={lang.language} level={lang.level} certificate={lang.certificate} />
         ))}
     </div>
     </div>
