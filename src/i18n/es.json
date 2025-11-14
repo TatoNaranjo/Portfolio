@@ -75,7 +75,7 @@
       },
       {
         "projectTitle": "Mitigación Emocional",
-        "projectDescription": "Este proyecto es una aplicación web full-stack diseñada para la detección y mitigación emocional a través de la música. El núcleo del sistema es un modelo de Deep Learning (Red Neuronal Densa con TensorFlow/Keras) que analiza las características de audio de una canción para clasificarla en tres emociones: Ira, Tristeza o Felicidad. El backend, construido en Python con Flask, sirve este modelo y se conecta a la API de Spotify (Spotipy) para recomendar playlists de mitigación que ayuden al usuario a regular su estado de ánimo. El proyecto va más allá de la demo principal, ofreciendo un dashboard de métricas (construido con Chart.js) para evaluar el rendimiento del modelo y una línea de tiempo de trazabilidad interactiva. Esta última documenta el proceso completo de investigación y las decisiones de ingeniería, incluyendo el pivoteo desde un modelo CNN fallido a la solución DNN actual, demostrando un ciclo de vida de desarrollo de ML completo.",
+        "projectDescription": "Este proyecto es una aplicación web full-stack diseñada para la detección y mitigación emocional a través de la música; el núcleo del sistema es un modelo de Deep Learning (Red Neuronal Densa con TensorFlow/Keras) que analiza las características de audio de una canción para clasificarla en tres emociones: Ira, Tristeza o Felicidad. El backend, construido en Python con Flask, sirve este modelo y se conecta a la API de Spotify (Spotipy) para recomendar playlists de mitigación que ayuden al usuario a regular su estado de ánimo. El proyecto va más allá de la demo principal, ofreciendo un dashboard de métricas (construido con Chart.js) para evaluar el rendimiento del modelo y una línea de tiempo de trazabilidad interactiva. Esta última documenta el proceso completo de investigación y las decisiones de ingeniería, incluyendo el pivoteo desde un modelo CNN fallido a la solución DNN actual, demostrando un ciclo de vida de desarrollo de ML completo.",
         "projectYear": "2025",
         "projectLinks": {
           "code": "https://github.com/TatoNaranjo/MitigacionEmocionalDL",
@@ -107,7 +107,7 @@
       },
       {
         "projectTitle": "Tato's Roguelike",
-        "projectDescription": "Modelo de Deep Learning (Aprendizaje Profundo) con Python + Keras para reconocer y detectar emociones en una canción y recomendar una lista de reproducción basada en sentimientos opuestos.",
+        "projectDescription": "\"El Roguelike de Tato\" es un proyecto de desarrollo de juegos que documenta mi aprendizaje práctico de Python aplicado a un género que me apasiona; El resultado es un juego funcional de exploración de mazmorras donde el jugador navega por niveles generados aleatoriamente. Construido desde cero siguiendo el popular tutorial de Roguelike, el proyecto utiliza tcod para la interfaz de consola y Numpy para operaciones de datos. El código está estructurado de manera modular y está completamente abierto a contribuciones, reflejando mi interés por el software de código abierto y el aprendizaje colaborativo.",
         "projectYear": "2024",
         "projectLinks": {
           "code": "https://github.com/TatoNaranjo/ElRoguelikeDeTato",
