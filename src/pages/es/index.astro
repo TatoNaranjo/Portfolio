@@ -15,7 +15,11 @@ import Footer from "../../components/sections/Footer.astro";
 let {altLang} = text_es;
 ---
 
-<Layout>
+<Layout 
+  lang="es" 
+  title="Santiago Naranjo Herrera | Desarrollador de Software" 
+  description="Portafolio de Santiago Naranjo Herrera, desarrollador de software especializado en React y Astro. Descubre mis proyectos, experiencia y habilidades."
+>
   <Header altLang=`${altLang}`/>
   <Welcome i18n = {text_es.welcome}/>
   <About title={text_es.about.sectionTitle} content={text_es.about.content} />
