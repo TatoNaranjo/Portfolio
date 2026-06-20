@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Props {
   lang: 'en' | 'es';
@@ -23,6 +23,26 @@ export default function ProjectModal({
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden"; // Prevent background scroll
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
   const index = projectDescription.indexOf(".");
@@ -37,8 +57,8 @@ export default function ProjectModal({
         className="border-4 flex flex-col cursor-pointer md:flex-row md:justify-between justify-center items-center p-6 w-full h-full hover:bg-gray-100 transition-discrete duration-500 ease-in-out gap-8"
       >
         <div className="flex md:justify-start flex-col md:text-start justify-center items-start gap-2">
-          <h2 className="md:text-[32px] w-full md:w-auto text-center md:text-start">{projectTitle || "Proyecto sin título"}</h2>
-          <span className="text-xs md:text-[16px]">{shortDescription}</span>
+          <h2 className="text-xl md:text-2xl lg:text-3xl w-full md:w-auto text-center md:text-start break-words">{projectTitle || "Proyecto sin título"}</h2>
+          <span className="text-sm md:text-base">{shortDescription}</span>
         </div>
         <div>
           <span>{projectYear}</span>
@@ -49,6 +69,9 @@ export default function ProjectModal({
         <div
           className={`fixed inset-0 bg-opacity-30 backdrop-blur-md flex justify-center items-center z-50 transition-opacity duration-300 ease-in-out ${isOpen?"opacity-100 visible":"opacity-0 invisible"}`}
           onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
         >
           <div
             className={`bg-white max-w-lg md:max-w-[50%] w-full border-4 text-black transition-all duration-300 ease-in-out ${isOpen?"opacity-100 scale-100":"opacity-0 scale-95"}`}
@@ -56,7 +79,7 @@ export default function ProjectModal({
           >
             <div className="bg-black flex justify-between items-center px-9 py-6 ">
               <div className="">
-                <h1 className="text-[16px] md:text-5xl text-white">
+                <h1 id="modal-title" className="text-2xl md:text-4xl lg:text-5xl text-white break-words">
                   {projectTitle || "Proyecto sin título"}
                 </h1>
               </div>
@@ -64,6 +87,7 @@ export default function ProjectModal({
               <button
                 onClick={closeModal}
                 className="float-right font-bold text-xl text-white leading-none md:text-xl cursor-pointer"
+                aria-label={lang === "en" ? "Close project details" : "Cerrar detalles del proyecto"}
               >
                 &times;
               </button>
@@ -71,8 +95,8 @@ export default function ProjectModal({
 
             <div className="px-6 py-7 flex flex-col items-center hover:border-black h-full  max-h-[70vh] md:max-h-auto overflow-scroll md:overflow-auto">
               <div className="pb-3">
-                <h2 className="border-b-4 text-[20px] md:text-[48px] md:w-fit md:mb-4">{lang === "en" ? "Description" : "Descripción"}</h2>
-                <span className="text-[12px] md:text-[20px]">{projectDescription}</span>
+                <h2 className="border-b-4 text-xl md:text-3xl lg:text-4xl md:w-fit md:mb-4">{lang === "en" ? "Description" : "Descripción"}</h2>
+                <span className="text-sm md:text-lg lg:text-xl">{projectDescription}</span>
               </div>
 
               <div className="my-4 flex gap-3 flex-wrap justify-start">
@@ -85,11 +109,11 @@ export default function ProjectModal({
                   </button>
                 ))}
               </div>
-              <div className="flex gap-4 flex-wrap mt-4 border-t-4 py-3 justify-center text-xm md:text-[32px] w-full">
+              <div className="flex gap-4 flex-wrap mt-4 border-t-4 py-3 justify-center text-sm md:text-2xl w-full">
                 <a
                   href={projectLinks.code}
                   target="blank"
-                  className="flex items-center gap-2 justify-center p-2 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-[16px bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]"
+                  className="flex items-center gap-2 justify-center p-2 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-base bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +139,7 @@ export default function ProjectModal({
                 <a
                   href={projectLinks.demo}
                   target="blank"
-                  className="flex items-center gap-2 justify-center p-2 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-[16px bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]"
+                  className="flex items-center gap-2 justify-center p-2 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-base bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +158,7 @@ export default function ProjectModal({
                 <a
                   href={projectLinks.design}
                   target="blank"
-                  className="flex items-center gap-2 justify-center p-2 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-[16px bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]"
+                  className="flex items-center gap-2 justify-center p-2 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-base bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

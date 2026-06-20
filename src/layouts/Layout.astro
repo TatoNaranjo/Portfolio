@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" role="main">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -12,7 +12,9 @@
 		<title>TatoNaranjo</title>
 	</head>
 	<body>
-		<slot />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
 
@@ -23,5 +25,6 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		overflow-x: hidden;
 	}
 </style>
