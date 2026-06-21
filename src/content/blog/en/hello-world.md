@@ -1,7 +1,7 @@
 ---
 title: "First Entry: Initializing the Log"
 description: "Setting up a new tech diary in my portfolio."
-pubDate: 2026-06-21
+pubDate: 2026-06-20
 tags: ["astro", "portfolio", "log"]
 lang: "en"
 ---
