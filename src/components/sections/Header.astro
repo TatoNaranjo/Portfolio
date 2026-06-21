@@ -12,10 +12,10 @@ let currentLang = altLang.toLowerCase() === "en" ? "es" : "en";
 
 <div class ="header max-w-screen-xl mx-auto flex justify-end items-center gap-6 p-4">
     <nav class="hidden md:flex gap-6 text-xl uppercase tracking-wide">
-        <a href={`/${currentLang}#work`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors">Work</a>
-        <a href={`/${currentLang}#about`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors">About</a>
-        <a href={`/${currentLang}/blog`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors">Blog</a>
-        <a href="/#contact" class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors">Contact</a>
+        <a href={`/${currentLang}#work`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_work</a>
+        <a href={`/${currentLang}#about`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_about</a>
+        <a href={`/${currentLang}/blog`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_blog</a>
+        <a href="/#contact" class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_contact</a>
     </nav>
     <Button text=`${altLang}` href={`/${link}`} className="text-xs md:text-base w-8 h-8 md:w-[52px] md:h-[52px]"></Button>
 </div>

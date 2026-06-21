@@ -159,6 +159,9 @@
       }
     ]
   },
+  "latestPosts": {
+    "sectionTitle": "Latest Posts"
+  },
   "education": {
     "sectionTitle": "Education",
     "item": [

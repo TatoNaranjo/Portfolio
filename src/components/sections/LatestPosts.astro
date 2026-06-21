@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import SectionTitle from '../ui/SectionTitle.astro';
+
+interface Props {
+    sectionTitle: string;
+}
+const { sectionTitle } = Astro.props;
+const path = Astro.url.pathname;
+const currentLang = path.startsWith('/en') ? 'en' : 'es';
+
+const allPosts = await getCollection('blog');
+
+// Filter by current language and sort by pubDate descending
+const localizedPosts = allPosts
+  .filter(post => post.data.lang === currentLang)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3); // Take the latest 3
+---
+
+<section id="latest-posts" class="max-w-screen-xl mx-auto flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-12">
+    <SectionTitle text={sectionTitle} />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6">
+        {localizedPosts.map((post) => (
+            <a href={`/${currentLang}/blog/${post.id.split('/').pop()}`} class="group block w-full bg-white border-4 border-black p-6 shadow-[8px_8px_0_0_#000] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0_0_#000] transition-all flex flex-col justify-between min-h-[250px]">
+                <div>
+                    <h3 class="text-2xl font-bold uppercase tracking-tighter mb-4 group-hover:text-[var(--accent)] transition-colors">
+                        {post.data.title}
+                    </h3>
+                    <p class="font-mono text-sm text-slate-600 mb-6 line-clamp-3">
+                        {post.data.description}
+                    </p>
+                </div>
+                <div class="mt-auto flex justify-between items-end">
+                    <div class="font-mono text-xs font-bold bg-slate-100 border border-black px-2 py-1">
+                        {post.data.pubDate.toLocaleDateString(currentLang === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                    </div>
+                    {post.data.tags && post.data.tags.length > 0 && (
+                        <div class="font-mono text-xs font-bold text-[var(--accent)]">
+                            #{post.data.tags[0]}
+                        </div>
+                    )}
+                </div>
+            </a>
+        ))}
+    </div>
+</section>

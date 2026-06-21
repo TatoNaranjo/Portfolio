@@ -28,11 +28,21 @@ const { Content } = await render(entry);
       <h1 class="text-5xl md:text-7xl tracking-tighter uppercase text-slate-900 leading-tight mb-4">
         {entry.data.title}
       </h1>
+      {entry.data.author && (
+        <p class="font-mono text-slate-800 font-bold mb-4 bg-slate-100 border border-slate-900 px-2 py-1 inline-block shadow-[2px_2px_0px_0px_rgba(15,81,50,1)]">
+          _autor: {entry.data.author}
+        </p>
+      )}
       {entry.data.tags && (
-        <div class="flex gap-3 font-mono text-sm font-bold text-slate-800">
+        <div class="flex gap-3 font-mono text-sm font-bold text-slate-800 mb-6">
           {entry.data.tags.map(tag => (
             <span class="bg-slate-100 border border-slate-900 px-2 py-0.5 shadow-[2px_2px_0px_0px_rgba(15,81,50,1)]">#{tag}</span>
           ))}
+        </div>
+      )}
+      {entry.data.image && (
+        <div class="border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,81,50,1)] mb-8 overflow-hidden">
+          <img src={entry.data.image.url} alt={entry.data.image.alt} class="w-full h-auto object-cover" />
         </div>
       )}
     </header>
