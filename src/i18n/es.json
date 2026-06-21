@@ -1,16 +1,42 @@
 {
   "altLang": "en",
   "welcome": {
-    "badgeInfo": "Desarrollador Web",
+    "badgeInfo": "Full-Stack Software Engineer",
     "contact": "contacto"
   },
   "about": {
     "sectionTitle": "Sobre Mí",
-    "content": "Ingeniero de Sistemas y Computación y Desarrollador Web con experiencia en metodologías ágiles. Competente en tecnologías como JavaScript, Python, React, Node.js y bases de datos relacionales y no relacionales. Historial comprobado en la resolución eficiente de problemas, con capacidad demostrada para adaptarse rápidamente a nuevas tecnologías y entornos de desarrollo."
+    "content": "Ingeniero de Sistemas y Desarrollador Full-Stack apasionado por la arquitectura de software, el código limpio y la resiliencia de los sistemas. Experiencia sólida construyendo aplicaciones web y móviles escalables con React, Flutter, TypeScript y Firebase, además de integrar hardware (BLE) y modelos de Machine Learning en entornos de producción. Capacidad demostrada para gestionar ciclos de vida completos de desarrollo, desde la concepción de la arquitectura hasta el despliegue y manejo de integraciones complejas de hardware y software."
   },
   "experience": {
     "sectionTitle": "Experiencia",
     "item": [
+      {
+        "role": "Software Engineer",
+        "company": "Otrofy Inc.",
+        "duration": "Marzo 2026 - Actualidad",
+        "imgName": "otrofy.png",
+        "items": [
+          "Propiedad completa de la arquitectura, desarrollo y mantenimiento de aplicaciones móviles en producción para los sectores HealthTech y wearables.",
+          "Integración móvil y de hardware: Liderazgo en la ingeniería de aplicaciones de transmisión de bioseñales en tiempo real, optimizando la conectividad Bluetooth Low Energy (BLE), el procesamiento de datos de sensores y la lógica de reconexión.",
+          "Arquitectura resiliente: Diseño e implementación de arquitecturas robustas del lado del cliente, incluyendo patrones 'Watchdog' para manejar inestabilidad de red y feedback háptico personalizado impulsado por flujos de datos dinámicos.",
+          "Lógica Full-Stack: Gestión de sincronización backend en tiempo real usando Firebase Firestore Streams, asegurando baja latencia y un manejo robusto del estado para entornos de alta concurrencia.",
+          "DevOps y Release Management: Supervisión del ciclo de vida completo de despliegue mediante Xcode Cloud y Android releases, manejando cumplimiento de encriptación, compilación AOT y lanzamientos exitosos en TestFlight y Google Play Console."
+        ]
+      },
+      {
+        "role": "Intern Full Stack Developer",
+        "company": "Otrofy Inc.",
+        "duration": "Diciembre 2025 - Marzo 2026",
+        "imgName": "otrofy.png",
+        "items": [
+          "Desarrollo de extremo a extremo y optimización de aplicaciones móviles de alto impacto en los sectores HealthTech y transmisión de bioseñales.",
+          "Ingeniería del MVP para sincronización de frecuencia cardíaca en vivo, implementando un patrón 'Watchdog' para manejar 'desconexiones silenciosas' y estabilizar la UI durante fallas de red.",
+          "Ingeniería UX Avanzada mediante el desarrollo de un motor háptico personalizado usando matemáticas de interpolación lineal para traducir bioseñales en intensidades de vibración precisas.",
+          "Mantenimiento y mejora de una aplicación especializada para la detección de emociones mediante wearables, optimizando la estabilidad BLE de los sensores externos.",
+          "Asunción de tareas de DevOps gestionando los pipelines de CI/CD, generación de builds a través de Xcode Cloud y resolviendo problemas de compilación AOT para asegurar la preparación para producción."
+        ]
+      },
       {
         "role": "Desarrollador Junior",
         "company": "Universidad De Cundinamarca",
@@ -45,21 +71,27 @@
     {
       "language": "Español",
       "level": "Nativo",
-      "certificate":""
+      "certificate": ""
     },
     {
       "language": "Inglés",
       "level": "C1",
-      "certificate":"https://cert.efset.org/2yp1Ke"
+      "certificate": "https://cert.efset.org/2yp1Ke"
+    },
+    {
+      "language": "Portugués",
+      "level": "Básico / En aprendizaje",
+      "certificate": ""
     }
   ],
   "projects": {
     "sectionTitle": "Proyectos",
     "item": [
-            {
+      {
         "projectTitle": "Aurora",
-        "projectDescription": "Este sistema ha sido desarrollado como parte de un proyecto de investigación en la Universidad de Cundinamarca Extensión Facatativá, con el objetivo de brindar a los estudiantes del programa de Psicología una herramienta de apoyo para el diagnóstico de trastornos depresivos. Utilizando técnicas avanzadas de machine learning, el sistema analiza datos clínicos para identificar patrones y factores de riesgo asociados con trastornos depresivos, proporcionando una herramienta complementaria al juicio clínico profesional.",
+        "projectDescription": "Este sistema ha sido desarrollado como proyecto de grado con el objetivo de brindar a los estudiantes del programa de Psicología una plataforma de entrenamiento en la identificación de trastornos depresivos. Utilizando técnicas de Machine Learning, específicamente Support Vector Machines (SVM), y marcadores lingüísticos, la plataforma permite a los estudiantes analizar datos clínicos e identificar patrones de riesgo en un entorno simulado, sirviendo como un puente tecnológico esencial para su formación académica profesional.",
         "projectYear": "2025",
+        "imgName": "project_aurora.png",
         "projectLinks": {
           "code": "https://github.com/TatoNaranjo/Aurora-Front-End",
           "demo": "https://github.com/TatoNaranjo/Aurora-Front-End",
@@ -71,6 +103,7 @@
           "Python",
           "TypeScript",
           "Django",
+          "SVM",
           "Figma",
           "Visual Paradigm"
         ]
@@ -79,6 +112,7 @@
         "projectTitle": "Mitigación Emocional",
         "projectDescription": "Este proyecto es una aplicación web full-stack diseñada para la detección y mitigación emocional a través de la música; el núcleo del sistema es un modelo de Deep Learning (Red Neuronal Densa con TensorFlow/Keras) que analiza las características de audio de una canción para clasificarla en tres emociones: Ira, Tristeza o Felicidad. El backend, construido en Python con Flask, sirve este modelo y se conecta a la API de Spotify (Spotipy) para recomendar playlists de mitigación que ayuden al usuario a regular su estado de ánimo. El proyecto va más allá de la demo principal, ofreciendo un dashboard de métricas (construido con Chart.js) para evaluar el rendimiento del modelo y una línea de tiempo de trazabilidad interactiva. Esta última documenta el proceso completo de investigación y las decisiones de ingeniería, incluyendo el pivoteo desde un modelo CNN fallido a la solución DNN actual, demostrando un ciclo de vida de desarrollo de ML completo.",
         "projectYear": "2025",
+        "imgName": "project_emotion.png",
         "projectLinks": {
           "code": "https://github.com/TatoNaranjo/MitigacionEmocionalDL",
           "demo": "https://github.com/TatoNaranjo/MitigacionEmocionalDL",
@@ -98,6 +132,7 @@
         "projectTitle": "Reconocimiento de Mariposas con Retropropagación",
         "projectDescription": "Desarrollé una aplicación de escritorio completa con MATLAB App Designer para la clasificación de mariposas; La herramienta principal permite al usuario cargar una imagen y, mediante un modelo de red neuronal entrenado, el sistema identifica y predice la especie de la mariposa. El proyecto demuestra un flujo de trabajo de machine learning de principio a fin. Además de la app de clasificación, creé módulos independientes para el entrenamiento del modelo y para el procesamiento de imágenes. Esta última utilidad permite cargar y aplicar dinámicamente diferentes kernels (definidos en un JSON) para visualizar cómo los filtros afectan a la extracción de características.",
         "projectYear": "2025",
+        "imgName": "project_butterfly.png",
         "projectLinks": {
           "code": "https://github.com/TatoNaranjo/BPMariposas",
           "demo": "https://github.com/TatoNaranjo/BPMariposas",
@@ -111,6 +146,7 @@
         "projectTitle": "Tato's Roguelike",
         "projectDescription": "\"El Roguelike de Tato\" es un proyecto de desarrollo de juegos que documenta mi aprendizaje práctico de Python aplicado a un género que me apasiona; El resultado es un juego funcional de exploración de mazmorras donde el jugador navega por niveles generados aleatoriamente. Construido desde cero siguiendo el popular tutorial de Roguelike, el proyecto utiliza tcod para la interfaz de consola y Numpy para operaciones de datos. El código está estructurado de manera modular y está completamente abierto a contribuciones, reflejando mi interés por el software de código abierto y el aprendizaje colaborativo.",
         "projectYear": "2024",
+        "imgName": "project_roguelike.png",
         "projectLinks": {
           "code": "https://github.com/TatoNaranjo/ElRoguelikeDeTato",
           "demo": "https://github.com/TatoNaranjo/ElRoguelikeDeTato",
@@ -139,7 +175,7 @@
         "eduTitle": "Universidad De Cundinamarca",
         "degree": "Pregrado - Ingeniería de Sistemas",
         "startDate": "2021",
-        "endDate": "2026",
+        "endDate": "Junio 2026 (Graduado)",
         "items": [
           "Programación y Desarrollo de Software",
           "Arquitecturas de Sistemas y Bases de Datos Relacionales / No Relacionales"
@@ -158,6 +194,6 @@
     ]
   },
   "footer": {
-    "subtitle": "Desarrollador Web"
+    "subtitle": "Full-Stack Software Engineer"
   }
 }
