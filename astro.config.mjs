@@ -9,6 +9,11 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
+  markdown: {
+    shikiConfig: {
+      theme: 'github-light',
+    },
+  },
   i18n: {
     locales: ["es", "en"],
     defaultLocale: "en",
