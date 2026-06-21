@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from "astro:transitions";
 import "../../styles/global.css";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/sections/Header.astro";
@@ -31,5 +30,3 @@ let {altLang} = text_en;
   <Education sectionTitle={text_en.education.sectionTitle} eduStrings={text_en.education}/>
   <Footer subtitle={text_en.footer.subtitle}/>
 </Layout>
-<ClientRouter />
-
