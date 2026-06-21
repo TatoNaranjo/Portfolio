@@ -1,0 +1,53 @@
+---
+import '../../../styles/global.css';
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/sections/Header.astro';
+import Footer from '../../../components/sections/Footer.astro';
+
+const allPosts = await getCollection('blog');
+const esPosts = allPosts.filter(post => post.data.lang === 'es');
+const sortedPosts = esPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title="Diario Tech | Santiago Naranjo Herrera" description="Bitácora técnica y aprendizajes.">
+  <Header altLang="EN" />
+  
+  <section class="max-w-screen-md mx-auto px-4 py-20 min-h-screen">
+    <div class="mb-12 bg-white/95 backdrop-blur-sm border-4 border-slate-900 p-8 shadow-[8px_8px_0px_0px_rgba(15,81,50,1)]">
+      <h1 class="text-6xl md:text-8xl tracking-tighter uppercase text-slate-900 mb-4">Diario Tech</h1>
+      <p class="font-mono text-slate-800 font-bold border-l-4 border-[var(--accent)] pl-4">
+        > _Log de sistema iniciado. Documentando ideas, notas y aprendizajes.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-8">
+      {sortedPosts.map((post) => (
+        <a href={`/es/blog/${post.id.split('/').pop()}`} class="group block bg-white border-4 border-slate-900 hover:translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(15,81,50,1)] p-6 transition-all">
+          <article class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6">
+            <time datetime={post.data.pubDate.toISOString()} class="font-mono font-bold text-sm text-[var(--accent)] whitespace-nowrap bg-slate-100 border border-slate-900 px-2 py-0.5">
+              [{post.data.pubDate.toISOString().split('T')[0]}]
+            </time>
+            <div>
+              <h2 class="text-3xl uppercase font-bold text-slate-900 tracking-wide group-hover:underline decoration-4 underline-offset-4 decoration-[var(--accent)] transition-all">
+                {post.data.title}
+              </h2>
+              <p class="text-slate-700 font-medium mt-2 font-sans">
+                {post.data.description}
+              </p>
+              {post.data.tags && (
+                <div class="flex gap-2 mt-4 font-mono text-xs font-bold text-slate-800">
+                  {post.data.tags.map(tag => (
+                    <span class="bg-slate-100 border border-slate-900 px-2 py-0.5 shadow-[2px_2px_0px_0px_rgba(15,81,50,1)]">#{tag}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </article>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <Footer subtitle="Keep exploring." />
+</Layout>
