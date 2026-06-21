@@ -29,7 +29,7 @@ const sortedPosts = esPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pub
               [{post.data.pubDate.toISOString().split('T')[0]}]
             </time>
             <div>
-              <h2 class="text-3xl uppercase font-bold text-slate-900 tracking-wide group-hover:underline decoration-4 underline-offset-4 decoration-[var(--accent)] transition-all">
+              <h2 class="text-3xl uppercase text-slate-900 tracking-wide group-hover:underline decoration-4 underline-offset-4 decoration-[var(--accent)] transition-all">
                 {post.data.title}
               </h2>
               <p class="text-slate-700 font-medium mt-2 font-sans">
