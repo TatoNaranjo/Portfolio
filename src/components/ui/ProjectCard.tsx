@@ -63,7 +63,7 @@ export default function ProjectModal({
         </div>
         <div className="flex flex-col justify-between p-4 h-1/3 bg-white group-hover:bg-[var(--accent)] transition-colors duration-0">
             <div className="flex justify-between items-start gap-2">
-                <h2 className="text-2xl md:text-3xl font-bold uppercase leading-none line-clamp-2 group-hover:text-white transition-colors duration-0">{projectTitle}</h2>
+                <h2 className="text-2xl md:text-3xl uppercase leading-none line-clamp-2 group-hover:text-white transition-colors duration-0">{projectTitle}</h2>
                 <span className="font-mono font-bold text-sm border-2 border-black px-2 py-0.5 bg-white text-black">{projectYear}</span>
             </div>
             <div className="flex gap-2 flex-wrap mt-2 overflow-hidden max-h-[30px]">
@@ -91,7 +91,7 @@ export default function ProjectModal({
           >
             <div className="bg-[var(--accent)] border-b-8 border-black flex justify-between items-start md:items-center px-6 py-4 md:px-9 md:py-6 gap-4">
               <div className="grow">
-                <h1 id="modal-title" className="text-3xl md:text-5xl lg:text-6xl font-bold uppercase leading-none text-white break-words">
+                <h1 id="modal-title" className="text-3xl md:text-5xl lg:text-6xl uppercase leading-none text-white break-words">
                   {projectTitle || "Proyecto sin título"}
                 </h1>
               </div>
@@ -107,7 +107,7 @@ export default function ProjectModal({
 
             <div className="px-6 py-7 md:p-9 flex flex-col h-full max-h-[65vh] overflow-y-auto">
               <div className="pb-6">
-                <h2 className="font-bold text-xl md:text-3xl uppercase mb-4 inline-block border-b-4 border-black pb-1">{lang === "en" ? "Description" : "Descripción"}</h2>
+                <h2 className="text-xl md:text-3xl uppercase mb-4 inline-block border-b-4 border-black pb-1">{lang === "en" ? "Description" : "Descripción"}</h2>
                 <p className="font-mono text-base md:text-lg leading-relaxed">{projectDescription}</p>
               </div>
 
