@@ -70,14 +70,26 @@ const logoList = [
             </div>
         </div>
 
-        <div class="photoFrame flex flex-col md:flex-row justify-center md:justify-end items-center md:items-end w-full md:w-2/5 relative z-0">
-            <X class="absolute top-[-5%] left-[-5%] w-[89px] h-[89px] max-sm:hidden z-10"/>
-            <Image src={MePhoto} alt="Santiago Naranjo Herrera" width={595} height={954} class="w-[280px] md:w-[360px] object-cover border-4 border-black shadow-[8px_8px_0_0_#000]" priority/>
-            <div class="logoContainers flex flex-wrap gap-4 justify-center mt-8 w-full md:absolute md:inset-0 md:mt-0 md:pointer-events-none">
+        <div class="photoFrame flex flex-col items-center md:items-end justify-center w-full md:w-2/5 z-0 mt-8 md:mt-0">
+            <div class="relative inline-block w-[280px] h-[380px] md:w-[360px] md:h-[480px]">
+                <X class="absolute -top-10 -left-10 w-[89px] h-[89px] max-sm:hidden z-20"/>
+                <Image src={MePhoto} alt="Santiago Naranjo Herrera" width={595} height={954} class="w-full h-full object-cover border-4 border-black shadow-[8px_8px_0_0_#000]" priority/>
+                
+                <div class="logoContainers hidden md:block absolute inset-0 pointer-events-none z-10">
+                    {logoList.map(logo =>(
+                       <Icon 
+                            name={logo.name} 
+                            className={`${logoStyles} ${logo.pos} ${logo.anim} pointer-events-auto`}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            <div class="logoContainers flex md:hidden flex-wrap gap-4 justify-center mt-8 w-full max-w-[280px]">
                 {logoList.map(logo =>(
                    <Icon 
                         name={logo.name} 
-                        className={`${logoStyles} ${logo.pos} ${logo.anim} pointer-events-auto`}
+                        className={`${logoStyles} pointer-events-auto`}
                     />
                 ))}
             </div>
