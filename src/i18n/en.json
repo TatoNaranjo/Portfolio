@@ -1,94 +1,145 @@
 {
-  "altLang": "es",  
+  "altLang": "es",
   "welcome": {
-    "badgeInfo": "Web Developer",
-    "contact": "contact"
+    "badgeInfo": "Full-Stack Software Engineer",
+    "contact": "contact",
+    "currentlyIn": "Working for:"
   },
   "about": {
     "sectionTitle": "About Me",
-    "content": "Computer and Systems Engineer and Web Developer with experience in agile methodologies. Proficient in technologies such as JavaScript, Python, React, Node.js, and Relational & No Relational databases. Proven track record in efficient problem solving, with demonstrated  ability to quickly adapt to new technologies and development  environments."
+    "content": "Systems Engineer and Full-Stack Developer passionate about software architecture, clean code, and system resilience. Solid experience building scalable web and mobile applications with React, Flutter, TypeScript, and Firebase, as well as integrating hardware (BLE) and Machine Learning models in production environments. Proven ability to manage complete development lifecycles, from architecture conception to deployment, handling complex hardware-software integrations and real-time data flows."
   },
   "experience": {
     "sectionTitle": "Experience",
     "item": [
       {
+        "role": "Software Engineer",
+        "company": "Otrofy Inc.",
+        "duration": "March 2026 - Present",
+        "imgName": "otrofy.png",
+        "items": [
+          "Promoted to take full ownership of the architecture, development, and maintenance of production-grade mobile applications in the HealthTech and wearable sectors.",
+          "Mobile & Hardware Integration: Lead the end-to-end engineering of real-time bio-signal broadcasting applications, optimizing complex Bluetooth Low Energy (BLE) connectivity, sensor data processing, and reconnection logic.",
+          "Resilient Architecture: Design and implement robust client-side architectures, including 'Watchdog' patterns to handle network instability and custom Haptic Engine feedback driven by dynamic data streams.",
+          "Full-Stack & Real-Time Logic: Manage real-time backend synchronization using Firebase Firestore Streams, ensuring low-latency data delivery and robust state management for high-concurrency environments.",
+          "DevOps & Release Management: Oversee the complete deployment lifecycle via Xcode Cloud and Android releases, handling encryption compliance, AOT compilation, and successful rollouts to Apple TestFlight and Google Play Console."
+        ]
+      },
+      {
+        "role": "Intern Full Stack Developer",
+        "company": "Otrofy Inc.",
+        "duration": "December 2025 - March 2026",
+        "imgName": "otrofy.png",
+        "items": [
+          "Spearheaded the end-to-end development and optimization of high-impact mobile applications in the HealthTech and Bio-signal broadcasting sectors.",
+          "Led the engineering of a mobile MVP for live heart-rate synchronization, implementing a 'Watchdog' pattern to handle 'Silent Disconnects' and ensure UI stability during network failures.",
+          "Advanced UX Engineering: Developed a custom Haptic Engine using Linear Interpolation mathematics to translate raw bio-signals into precise vibration intensities.",
+          "Contributed to the maintenance and improvement of a specialized app for analyzing biometric data via wearables, optimizing BLE connection stability for external sensors.",
+          "Assumed DevOps responsibilities by managing the release pipelines for iOS (TestFlight) and Android, handling CI/CD via Xcode Cloud, and resolving AOT compilation issues to ensure production readiness."
+        ]
+      },
+      {
         "role": "Junior Developer",
         "company": "University Of Cundinamarca",
         "duration": "2+ Years",
-        "imgName":"coffee.png",
-        "items":[
+        "imgName": "coffee.png",
+        "items": [
           "Collaborated with a team of systems engineers developing the front end of a recipe book to allow students to create, edit and share recipes.",
           "Developed the front-end of a platform for freelancers focused on the recruitment and creation of medical services  using SCRUM methodology.",
           "Experience with React.js to build several interactive SPAs."
         ]
       },
-       {
+      {
         "role": "Algorithms Tutor & Competitive Programmer",
         "company": "University Of Cundinamarca",
         "duration": "April 2022 - Present",
-        "imgName":"comp.png",
-        "items":[
+        "imgName": "comp.png",
+        "items": [
           "Provide competitive programming tutorials in C++ and Python, guiding students to improve their skills in algorithms and data structures.",
           "Keep up to date through extensive research and constant review of technical documentation related to algorithms and  data structures.",
           "Active participant in national and international competitions, such as the ICPC, CCPL, Codeforces Divs and RPC."
         ]
-      }     
+      }
     ]
   },
   "skills": {
-    "sectionTitle": ["Skills", "Languages"]
+    "sectionTitle": [
+      "Skills",
+      "Languages"
+    ]
   },
-  "languages":[
+  "languages": [
     {
-      "language":"Spanish",
-      "level":"Native",
-      "certificate":""
+      "language": "Spanish",
+      "level": "Native",
+      "certificate": ""
     },
     {
-      "language":"English",
-      "level":"C1",
-      "certificate":"https://cert.efset.org/2yp1Ke"
+      "language": "English",
+      "level": "C1",
+      "certificate": "https://cert.efset.org/2yp1Ke"
+    },
+    {
+      "language": "Portuguese",
+      "level": "Basic / Learning",
+      "certificate": ""
     }
   ],
   "projects": {
     "sectionTitle": "Projects",
-"item": [
-        {
+    "item": [
+      {
         "projectTitle": "Aurora",
-        "projectDescription": "This system has been developed as part of a research project at the University of Cundinamarca Extension Facatativá, with the aim of providing students in the Psychology program with a support tool for the diagnosis of depressive disorders.Using advanced machine learning techniques, the system analyzes clinical data to identify patterns and risk factors associated with depressive disorders, providing a complementary tool to professional clinical judgment.",
-        "projectYear": "2025",
-        "projectLinks":{
-          "code":"https://github.com/TatoNaranjo/Aurora-Front-End",
-          "demo":"https://github.com/TatoNaranjo/Aurora-Front-End",
-          "design":"https://www.figma.com/design/jnKeC3tEU6BbSCyhXHAmtJ/Clasificaci%C3%B3n-de-Trastornos?node-id=19-36&t=ROUEE81pPpLn6lxA-1"
+        "projectDescription": "This system has been developed as a graduation project to provide students in the Psychology program with a training platform for identifying depressive disorders. Using Machine Learning techniques, specifically Support Vector Machines (SVM), and linguistic markers, the platform allows students to analyze clinical data and identify risk patterns in a simulated environment, serving as an essential technological bridge for their professional academic training.",
+        "projectYear": "2026",
+        "imgName": "aurora.png",
+        "projectLinks": {
+          "code": "https://github.com/TatoNaranjo/Aurora-Front-End",
+          "demo": "https://github.com/TatoNaranjo/Aurora-Front-End",
+          "design": "https://www.figma.com/design/jnKeC3tEU6BbSCyhXHAmtJ/Clasificaci%C3%B3n-de-Trastornos?node-id=19-36&t=ROUEE81pPpLn6lxA-1"
         },
-        "techStack":[
-          "React", "Node.JS","Python","TypeScript","Django", "Figma", "Visual Paradigm"
+        "techStack": [
+          "React",
+          "Node.JS",
+          "Python",
+          "TypeScript",
+          "Django",
+          "SVM",
+          "Figma",
+          "Visual Paradigm"
         ]
       },
       {
-        "projectTitle": "Emotional Mitigation Playlist Recomendator W/ Spotify Playlists",
+        "projectTitle": "Emotion Mitigation Through Music",
         "projectDescription": "This project is a full-stack web application designed for emotional detection and mitigation through music; The core of the system is a deep learning model (dense neural network with TensorFlow/Keras) that analyzes the audio characteristics of a song to classify it into three emotions: anger, sadness, or happiness. The backend, built in Python with Flask, serves this model and connects to the Spotify API (Spotipy) to recommend mitigation playlists that help the user regulate their mood. The project goes beyond the main demo, offering a metrics dashboard (built with Chart.js) to evaluate the model's performance and an interactive traceability timeline. The latter documents the entire research process and engineering decisions, including the pivot from a failed CNN model to the current DNN solution, demonstrating a complete ML development lifecycle.",
         "projectYear": "2025",
-        "projectLinks":{
-          "code":"https://github.com/TatoNaranjo/MitigacionEmocionalDL",
-          "demo":"https://github.com/TatoNaranjo/MitigacionEmocionalDL",
-          "design":"https://github.com/TatoNaranjo/MitigacionEmocionalDL"
+        "imgName": "project_emotion.png",
+        "projectLinks": {
+          "code": "https://github.com/TatoNaranjo/MitigacionEmocionalDL",
+          "demo": "https://github.com/TatoNaranjo/MitigacionEmocionalDL",
+          "design": "https://github.com/TatoNaranjo/MitigacionEmocionalDL"
         },
-        "techStack":[
-          "React", "Node.JS","Python","Keras","Tensorflow","TypeScript","Django"
+        "techStack": [
+          "React",
+          "Node.JS",
+          "Python",
+          "Keras",
+          "Tensorflow",
+          "TypeScript",
+          "Django"
         ]
       },
       {
         "projectTitle": "Butterfly Recognition w/ Back Propagation",
         "projectDescription": "I developed a complete desktop application with MATLAB App Designer for butterfly classification, the main tool allows the user to upload an image, and using a trained neural network model; the system identifies and predicts the butterfly species. The project demonstrates an end-to-end machine learning workflow. In addition to the classification app, I created separate modules for model training and image processing. The latter utility allows you to dynamically load and apply different kernels (defined in a JSON) to visualize how filters affect feature extraction.",
         "projectYear": "2025",
-        "projectLinks":{
-          "code":"https://github.com/TatoNaranjo/BPMariposas",
-          "demo":"https://github.com/TatoNaranjo/BPMariposas",
-          "design":"https://github.com/TatoNaranjo/BPMariposas"
+        "imgName": "butterflies.jpg",
+        "projectLinks": {
+          "code": "https://github.com/TatoNaranjo/BPMariposas",
+          "demo": "https://github.com/TatoNaranjo/BPMariposas",
+          "design": "https://github.com/TatoNaranjo/BPMariposas"
         },
-        "techStack":[
+        "techStack": [
           "MatLab"
         ]
       },
@@ -96,44 +147,54 @@
         "projectTitle": "Tato's Roguelike",
         "projectDescription": "“Tato's Roguelike” is a game development project that documents my hands-on learning of Python applied to a genre I am passionate about; The result is a functional dungeon exploration game where the player navigates randomly generated levels; Built from scratch following the popular Roguelike tutorial, the project uses tcod for the console interface and Numpy for data operations. The code is structured in a modular way and is completely open to contributions, reflecting my interest in open source software and collaborative learning.",
         "projectYear": "2024",
-        "projectLinks":{
-          "code":"https://github.com/TatoNaranjo/ElRoguelikeDeTato",
-          "demo":"https://github.com/TatoNaranjo/ElRoguelikeDeTato",
-          "design":"https://rogueliketutorials.com/tutorials/tcod/v2/extras/traditional-look/"
+        "imgName": "roguelike.png",
+        "projectLinks": {
+          "code": "https://github.com/TatoNaranjo/ElRoguelikeDeTato",
+          "demo": "https://github.com/TatoNaranjo/ElRoguelikeDeTato",
+          "design": "https://rogueliketutorials.com/tutorials/tcod/v2/extras/traditional-look/"
         },
-        "techStack":[
+        "techStack": [
           "Python"
         ]
       }
     ]
   },
-  "education":{
-    "sectionTitle":"Education",
-    "item":[
+  "education": {
+    "sectionTitle": "Education",
+    "item": [
       {
-        "eduTitle":"E.I San Miguel Arcángel College",
-        "degree":"Baccaulareate",
-        "startDate":"2010",
-        "endDate":"2021",
-        "items":["HTML Web Design", "C++ Development With Arduino"]
+        "eduTitle": "E.I San Miguel Arcángel College",
+        "degree": "Baccaulareate",
+        "startDate": "2010",
+        "endDate": "2021",
+        "items": [
+          "HTML Web Design",
+          "C++ Development With Arduino"
+        ]
       },
       {
-        "eduTitle":"University Of Cundinamarca",
-        "degree":"Undergraduate - Systems Engineering",
-        "startDate":"2021",
-        "endDate":"2026",
-        "items":["Programming & Software Development", "Systems Architectures & Relational / No Relational Databases"]
+        "eduTitle": "University Of Cundinamarca",
+        "degree": "Undergraduate - Systems Engineering",
+        "startDate": "2021",
+        "endDate": "June 2026 (Graduated)",
+        "items": [
+          "Programming & Software Development",
+          "Systems Architectures & Relational / No Relational Databases"
+        ]
       },
       {
-        "eduTitle":"Oracle Next Education",
-        "degree":"Development Practices",
-        "startDate":"2023",
-        "endDate":"2024",
-        "items":["Hands-on projects that simulate real-world Scenarios", "Responsive Design & Web Accesibility"]
+        "eduTitle": "Oracle Next Education",
+        "degree": "Development Practices",
+        "startDate": "2023",
+        "endDate": "2024",
+        "items": [
+          "Hands-on projects that simulate real-world Scenarios",
+          "Responsive Design & Web Accesibility"
+        ]
       }
     ]
   },
-  "footer":{
-    "subtitle":"Web Developer"
+  "footer": {
+    "subtitle": "Full-Stack Software Engineer"
   }
 }

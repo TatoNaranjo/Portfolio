@@ -2,25 +2,26 @@
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
 import { Image } from 'astro:assets';
-import MePhoto from "../../assets/images/me.webp";
+import MePhoto from "../../assets/images/me.jpeg";
 import X from "../../assets/xSVG.svg";
 
 interface Props {
     i18n: {
         badgeInfo: string;
         contact: string;
+        currentlyIn: string;
     };
 }
 
 const { i18n } = Astro.props;
-const {badgeInfo, contact} = i18n;
+const {badgeInfo, contact, currentlyIn} = i18n;
 
 const logoStyles ="w-[32px] h-[32px] md:hover:w-[48px] md:hover:h-[48px] transition-all duration-300 ease-in-out";
 
 const logoList = [
-    { name: "apple", pos: "md:absolute md:top-[-12%] md:left-[80%]", anim: "animate-float-fast" },
-    { name: "arch", pos: "md:absolute md:top-[0%] md:right-[-10%]", anim: "animate-float-slow" },
-    { name: "spotify", pos: "md:absolute md:top-[-10%] md:left-[95%]", anim: "animate-float-fast" },
+    { name: "apple", pos: "md:absolute md:top-[-12%] md:left-[80%]", anim: "md:animate-float-fast" },
+    { name: "arch", pos: "md:absolute md:top-[0%] md:right-[-10%]", anim: "md:animate-float-slow" },
+    { name: "spotify", pos: "md:absolute md:top-[-10%] md:left-[95%]", anim: "md:animate-float-fast" },
 
     /* 
     Left top Corner Logo Positions
@@ -28,52 +29,65 @@ const logoList = [
     Left Side First Column: Left -15%
     Left Side Second Column: Left-30%
     */
-    { name: "figma", pos: "md:absolute md:top-[50%] md:left-[-15%]" , anim: "animate-float-slow"},
-    { name: "node", pos: "md:absolute md:top-[58%] md:left-[-30%]", anim: "animate-float-fast" },
-    { name: "obsidian", pos: "md:absolute md:top-[66%] md:left-[-15%]", anim: "animate-float-fast" },
-    { name: "markdown", pos: "md:absolute md:top-[74%] md:left-[-30%]", anim: "animate-float-slow" },
-    { name: "react", pos: "md:absolute md:top-[82%] md:left-[-15%]", anim: "animate-float-slow" },
-    { name: "typescript", pos: "md:absolute md:top-[90%] md:left-[-30%]" , anim: "animate-float-fast"},
-    { name: "latex", pos: "md:absolute md:top-[98%] md:left-[-15%]", anim: "animate-float-slow" },
+    { name: "figma", pos: "md:absolute md:top-[50%] md:left-[-15%]" , anim: "md:animate-float-slow"},
+    { name: "node", pos: "md:absolute md:top-[58%] md:left-[-30%]", anim: "md:animate-float-fast" },
+    { name: "obsidian", pos: "md:absolute md:top-[66%] md:left-[-15%]", anim: "md:animate-float-fast" },
+    { name: "markdown", pos: "md:absolute md:top-[74%] md:left-[-30%]", anim: "md:animate-float-slow" },
+    { name: "react", pos: "md:absolute md:top-[82%] md:left-[-15%]", anim: "md:animate-float-slow" },
+    { name: "typescript", pos: "md:absolute md:top-[90%] md:left-[-30%]" , anim: "md:animate-float-fast"},
+    { name: "latex", pos: "md:absolute md:top-[98%] md:left-[-15%]", anim: "md:animate-float-slow" },
 
     /* Bottom Left Logo Positions */
-    { name: "python", pos: "md:absolute md:top-[105%] md:left-[0%]", anim: "animate-float-fast" },
-    { name: "tailwind", pos: "md:absolute md:top-[110%] md:left-[15%]", anim: "animate-float-slow" },
-    { name: "javascript", pos: "md:absolute md:top-[105%] md:left-[30%]", anim: "animate-float-fast" }
+    { name: "python", pos: "md:absolute md:top-[105%] md:left-[0%]", anim: "md:animate-float-fast" },
+    { name: "tailwind", pos: "md:absolute md:top-[110%] md:left-[15%]", anim: "md:animate-float-slow" },
+    { name: "javascript", pos: "md:absolute md:top-[105%] md:left-[30%]", anim: "md:animate-float-fast" }
 ];
 ---
 
-<section class="welcomeContainer max-w-screen-xl mx-auto flex md:justify-around flex-col md:flex-row justify-center items-center gap-4 md:gap-16 p-8 md:p-16 md:mb-6">
-<div class="infoContainer flex items-center md:items-start flex-col gap-2.5 py-4 px-2" transition:animate="slide">
-    <div class="badgeContainer flex border-4 border-black w-fit h-fit py-2 px-6 shadow-[0px_4px_0_0_#000]">
-        {badgeInfo}
-    </div>
-    <div class="nameContainer flex flex-col uppercase text-4xl md:text-6xl lg:text-7xl text-center md:text-left leading-none md:leading-tight">
-        <span id="firstName">Santiago</span>
-        <span>Naranjo</span>
-        <span>Herrera</span>
-    </div>
+<section id="about" class="welcomeContainer max-w-screen-xl mx-auto flex flex-col pt-8 md:pt-16 px-6 md:px-16 md:mb-12">
+    <div class="flex flex-col md:flex-row items-end justify-between gap-8 w-full relative">
+        <div class="infoContainer flex flex-col gap-6 py-4 w-full md:w-3/5 z-10" transition:animate="slide">
+            <div class="badgeContainer flex border-4 border-black bg-[var(--accent)] text-white font-bold uppercase w-fit py-2 px-6 shadow-[4px_4px_0_0_#000]">
+                {badgeInfo}
+            </div>
+            <h1 class="nameContainer flex flex-col uppercase text-6xl md:text-[7rem] lg:text-[9rem] text-left leading-[0.85] m-0">
+                <span id="firstName">Santiago</span>
+                <span>Naranjo</span>
+                <span>Herrera</span>
+            </h1>
 
-    <div class="contactContainer flex flex-wrap gap-4 justify-center items-center md:justify-start mt-4 md:mt-0 md:pr-[30px]">
-        <Button text={contact} href="mailto:naranjosa2004@gmail.com"/>
-        <Button text='Github' href='https://github.com/TatoNaranjo' variant='white'/>
-        <Button text='+57 3143109118' href='https://wa.me/3143109118' variant='white'/>
-    </div>
-</div>
+            <a href="https://otrofy.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 border-4 border-black bg-white px-4 py-2.5 shadow-[4px_4px_0_0_#000] w-fit hover:-translate-y-1 hover:shadow-[6px_6px_0_0_#000] rotate-2 transition-all duration-300">
+                <span class="font-mono text-sm uppercase font-bold text-gray-700">{currentlyIn}</span>
+                <div class="h-6 flex items-center">
+                    <Icon name="otrofy" className="h-6 w-auto" />
+                </div>
+            </a>
 
-<div class="photoFrame flex flex-col gap-4 md:flex-row justify-center items-center md:relative">
-    <div>
-        <X class="absolute top-[-10%] left-[-14.5%] w-[89px] h-[89px] max-sm:hidden"/>
-        <Image src={MePhoto} alt="Santiago Naranjo Herrera" width={595} height={954} class="md:h-[396px] md:w-[304px] border-4 border-black object-cover " priority/>
+            <div class="contactContainer flex flex-wrap gap-4 justify-start mt-4">
+                <Button text={contact} href="mailto:naranjosa2004@gmail.com"/>
+                <Button text='Github' href='https://github.com/TatoNaranjo' variant='white'/>
+                <Button text='+57 3143109118' href='https://wa.me/3143109118' variant='white'/>
+            </div>
+        </div>
+
+        <div class="photoFrame flex flex-col md:flex-row justify-center md:justify-end items-center md:items-end w-full md:w-2/5 relative z-0">
+            <X class="absolute top-[-5%] left-[-5%] w-[89px] h-[89px] max-sm:hidden z-10"/>
+            <Image src={MePhoto} alt="Santiago Naranjo Herrera" width={595} height={954} class="w-[280px] md:w-[360px] object-cover border-4 border-black shadow-[8px_8px_0_0_#000]" priority/>
+            <div class="logoContainers flex flex-wrap gap-4 justify-center mt-8 w-full md:absolute md:inset-0 md:mt-0 md:pointer-events-none">
+                {logoList.map(logo =>(
+                   <Icon 
+                        name={logo.name} 
+                        className={`${logoStyles} ${logo.pos} ${logo.anim} pointer-events-auto`}
+                    />
+                ))}
+            </div>
+        </div>
     </div>
-    <div class="logoContainers flex flex-wrap justify-center gap-3 items-center">
-        
-        {logoList.map(logo =>(
-           <Icon 
-                name={logo.name} 
-                className={`${logoStyles} ${logo.pos} ${logo.anim}`}
-            />
-        ))}
-    </div>
-</div>
 </section>
+
+<!-- Infinite Marquee -->
+<div class="w-full border-y-4 border-black bg-[var(--accent)] overflow-hidden py-3 mt-24 mb-8 flex relative">
+    <div class="flex whitespace-nowrap animate-[marquee_20s_linear_infinite] font-mono text-xl md:text-2xl font-bold uppercase tracking-wider text-white">
+        {Array(10).fill("REACT • TYPESCRIPT • VITE • FLUTTER • NODE.JS • PYTHON • MACHINE LEARNING • SQL • ").map((text) => <span>{text}&nbsp;</span>)}
+    </div>
+</div>

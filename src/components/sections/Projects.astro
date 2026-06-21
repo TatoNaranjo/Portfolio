@@ -7,6 +7,7 @@ interface ProjectItem {
     projectTitle: string;
     projectDescription: string;
     projectYear: string;
+    imgName?: string;
     projectLinks:{
         code:string;
         demo?:string;
@@ -24,26 +25,31 @@ interface Props{
 const {sectionTitle, projectStrings} = Astro.props;
 const path = Astro.url.pathname;
 const currentLang = path.startsWith('/en') ? 'en' : 'es';
+const allImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*.*', { eager: true });
 ---
 
-<section class="max-w-screen-xl mx-auto flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-9">
+<section id="work" class="max-w-screen-xl mx-auto flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-12">
 <SectionTitle text={sectionTitle} />
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
 
-{projectStrings.item.map((project) => (
-        <div class="">
-            <ProjectModal 
-                client:load
-                projectTitle={project.projectTitle}
-                projectYear={project.projectYear}
-                projectDescription={project.projectDescription}
-                projectLinks={project.projectLinks}
-                techStack={project.techStack}
-                lang={currentLang}
-            />
-        </div>
-    ))}
+{projectStrings.item.map((project, index) => {
+        const imageSrc = project.imgName ? allImages[`/src/assets/images/projects/${project.imgName}`]?.default?.src : undefined;
+        return (
+            <div class={`w-full h-[350px] md:h-[450px] ${index === 0 || index === 3 ? 'md:col-span-2' : 'md:col-span-1'}`}>
+                <ProjectModal 
+                    client:load
+                    projectTitle={project.projectTitle}
+                    projectYear={project.projectYear}
+                    projectDescription={project.projectDescription}
+                    imgSrc={imageSrc}
+                    projectLinks={project.projectLinks}
+                    techStack={project.techStack}
+                    lang={currentLang}
+                />
+            </div>
+        );
+    })}
 </div>
 
 </section>
