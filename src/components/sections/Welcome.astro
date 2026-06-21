@@ -43,37 +43,43 @@ const logoList = [
 ];
 ---
 
-<section class="welcomeContainer max-w-screen-xl mx-auto flex md:justify-around flex-col md:flex-row justify-center items-center gap-4 md:gap-16 p-8 md:p-16 md:mb-6">
-<div class="infoContainer flex items-center md:items-start flex-col gap-2.5 py-4 px-2" transition:animate="slide">
-    <div class="badgeContainer flex border-4 border-black w-fit h-fit py-2 px-6 shadow-[0px_4px_0_0_#000]">
-        {badgeInfo}
-    </div>
-    <div class="nameContainer flex flex-col uppercase text-4xl md:text-6xl lg:text-7xl text-center md:text-left leading-none md:leading-tight">
-        <span id="firstName">Santiago</span>
-        <span>Naranjo</span>
-        <span>Herrera</span>
-    </div>
+<section id="about" class="welcomeContainer max-w-screen-xl mx-auto flex flex-col pt-8 md:pt-16 px-6 md:px-16 md:mb-12">
+    <div class="flex flex-col md:flex-row items-end justify-between gap-8 w-full relative">
+        <div class="infoContainer flex flex-col gap-6 py-4 w-full md:w-3/5 z-10" transition:animate="slide">
+            <div class="badgeContainer flex border-4 border-black bg-[var(--accent)] text-white font-bold uppercase w-fit py-2 px-6 shadow-[4px_4px_0_0_#000]">
+                {badgeInfo}
+            </div>
+            <h1 class="nameContainer flex flex-col uppercase text-6xl md:text-[7rem] lg:text-[9rem] text-left leading-[0.85] m-0">
+                <span id="firstName">Santiago</span>
+                <span>Naranjo</span>
+                <span>Herrera</span>
+            </h1>
 
-    <div class="contactContainer flex flex-wrap gap-4 justify-center items-center md:justify-start mt-4 md:mt-0 md:pr-[30px]">
-        <Button text={contact} href="mailto:naranjosa2004@gmail.com"/>
-        <Button text='Github' href='https://github.com/TatoNaranjo' variant='white'/>
-        <Button text='+57 3143109118' href='https://wa.me/3143109118' variant='white'/>
-    </div>
-</div>
+            <div class="contactContainer flex flex-wrap gap-4 justify-start mt-4">
+                <Button text={contact} href="mailto:naranjosa2004@gmail.com"/>
+                <Button text='Github' href='https://github.com/TatoNaranjo' variant='white'/>
+                <Button text='+57 3143109118' href='https://wa.me/3143109118' variant='white'/>
+            </div>
+        </div>
 
-<div class="photoFrame flex flex-col gap-4 md:flex-row justify-center items-center md:relative">
-    <div>
-        <X class="absolute top-[-10%] left-[-14.5%] w-[89px] h-[89px] max-sm:hidden"/>
-        <Image src={MePhoto} alt="Santiago Naranjo Herrera" width={595} height={954} class="md:h-[396px] md:w-[304px] border-4 border-black object-cover " priority/>
+        <div class="photoFrame flex justify-center md:justify-end items-end w-full md:w-2/5 relative z-0">
+            <X class="absolute top-[-5%] left-[-5%] w-[89px] h-[89px] max-sm:hidden z-10"/>
+            <Image src={MePhoto} alt="Santiago Naranjo Herrera" width={595} height={954} class="w-[280px] md:w-[360px] object-cover border-4 border-black shadow-[8px_8px_0_0_#000]" priority/>
+            <div class="logoContainers absolute inset-0 pointer-events-none">
+                {logoList.map(logo =>(
+                   <Icon 
+                        name={logo.name} 
+                        className={`${logoStyles} ${logo.pos} ${logo.anim} pointer-events-auto`}
+                    />
+                ))}
+            </div>
+        </div>
     </div>
-    <div class="logoContainers flex flex-wrap justify-center gap-3 items-center">
-        
-        {logoList.map(logo =>(
-           <Icon 
-                name={logo.name} 
-                className={`${logoStyles} ${logo.pos} ${logo.anim}`}
-            />
-        ))}
-    </div>
-</div>
 </section>
+
+<!-- Infinite Marquee -->
+<div class="w-full border-y-4 border-black bg-[var(--accent)] overflow-hidden py-3 mt-24 mb-8 flex relative">
+    <div class="flex whitespace-nowrap animate-[marquee_20s_linear_infinite] font-mono text-xl md:text-2xl font-bold uppercase tracking-wider text-white">
+        {Array(10).fill("REACT • TYPESCRIPT • VITE • FLUTTER • NODE.JS • PYTHON • MACHINE LEARNING • SQL • ").map((text) => <span>{text}&nbsp;</span>)}
+    </div>
+</div>

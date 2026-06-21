@@ -5,6 +5,7 @@ interface Props {
   projectTitle: string;
   projectDescription: string;
   projectYear: string;
+  imgName?: string;
   projectLinks: {
     code: string;
     demo?: string;
@@ -18,6 +19,7 @@ export default function ProjectModal({
   projectTitle,
   projectDescription,
   projectYear,
+  imgName,
   projectLinks,
   techStack,
 }: Props) {
@@ -54,72 +56,83 @@ export default function ProjectModal({
       {}
       <button
         onClick={openModal}
-        className="border-4 flex flex-col cursor-pointer md:flex-row md:justify-between justify-center items-center p-6 w-full h-full hover:bg-gray-100 transition-discrete duration-500 ease-in-out gap-8"
+        className="group relative border-4 border-black flex flex-col cursor-pointer w-full h-full bg-white overflow-hidden text-left hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#000] transition-all duration-300"
       >
-        <div className="flex md:justify-start flex-col md:text-start justify-center items-start gap-2">
-          <h2 className="text-xl md:text-2xl lg:text-3xl w-full md:w-auto text-center md:text-start break-words">{projectTitle || "Proyecto sin título"}</h2>
-          <span className="text-sm md:text-base">{shortDescription}</span>
+        <div className="w-full h-2/3 border-b-4 border-black overflow-hidden bg-gray-200">
+          {imgName && <img src={`/images/projects/${imgName}`} alt={projectTitle} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />}
         </div>
-        <div>
-          <span>{projectYear}</span>
+        <div className="flex flex-col justify-between p-4 h-1/3 bg-white group-hover:bg-[var(--accent)] transition-colors duration-0">
+            <div className="flex justify-between items-start gap-2">
+                <h2 className="text-2xl md:text-3xl font-bold uppercase leading-none line-clamp-2 group-hover:text-white transition-colors duration-0">{projectTitle}</h2>
+                <span className="font-mono font-bold text-sm border-2 border-black px-2 py-0.5 bg-white text-black">{projectYear}</span>
+            </div>
+            <div className="flex gap-2 flex-wrap mt-2 overflow-hidden max-h-[30px]">
+                {techStack.slice(0, 3).map((tech) => (
+                    <span key={tech} className="font-mono text-xs border-2 border-black px-1.5 py-0.5 bg-white text-black whitespace-nowrap">
+                        {tech}
+                    </span>
+                ))}
+                {techStack.length > 3 && <span className="font-mono font-bold text-xs border-2 border-black px-1.5 py-0.5 bg-black text-white">+{techStack.length - 3}</span>}
+            </div>
         </div>
       </button>
 
       
         <div
-          className={`fixed inset-0 bg-opacity-30 backdrop-blur-md flex justify-center items-center z-50 transition-opacity duration-300 ease-in-out ${isOpen?"opacity-100 visible":"opacity-0 invisible"}`}
+          className={`fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 transition-opacity duration-200 ${isOpen?"opacity-100 visible":"opacity-0 invisible"}`}
           onClick={closeModal}
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
         >
           <div
-            className={`bg-white max-w-lg md:max-w-[50%] w-full border-4 text-black transition-all duration-300 ease-in-out ${isOpen?"opacity-100 scale-100":"opacity-0 scale-95"}`}
+            className={`bg-white max-w-3xl w-11/12 border-8 border-black text-black shadow-[16px_16px_0_0_#000] md:shadow-[24px_24px_0_0_var(--accent)] transition-transform duration-200 ${isOpen?"scale-100 translate-y-0":"scale-95 translate-y-8"}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-black flex justify-between items-center px-9 py-6 ">
-              <div className="">
-                <h1 id="modal-title" className="text-2xl md:text-4xl lg:text-5xl text-white break-words">
+            <div className="bg-[var(--accent)] border-b-8 border-black flex justify-between items-start md:items-center px-6 py-4 md:px-9 md:py-6 gap-4">
+              <div className="grow">
+                <h1 id="modal-title" className="text-3xl md:text-5xl lg:text-6xl font-bold uppercase leading-none text-white break-words">
                   {projectTitle || "Proyecto sin título"}
                 </h1>
               </div>
 
               <button
                 onClick={closeModal}
-                className="float-right font-bold text-xl text-white leading-none md:text-xl cursor-pointer"
+                className="shrink-0 bg-white text-black border-4 border-black font-bold text-2xl w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-black hover:text-white hover:shadow-[4px_4px_0_0_#000] transition-all cursor-pointer"
                 aria-label={lang === "en" ? "Close project details" : "Cerrar detalles del proyecto"}
               >
                 &times;
               </button>
             </div>
 
-            <div className="px-6 py-7 flex flex-col items-center hover:border-black h-full  max-h-[70vh] md:max-h-auto overflow-scroll md:overflow-auto">
-              <div className="pb-3">
-                <h2 className="border-b-4 text-xl md:text-3xl lg:text-4xl md:w-fit md:mb-4">{lang === "en" ? "Description" : "Descripción"}</h2>
-                <span className="text-sm md:text-lg lg:text-xl">{projectDescription}</span>
+            <div className="px-6 py-7 md:p-9 flex flex-col h-full max-h-[65vh] overflow-y-auto">
+              <div className="pb-6">
+                <h2 className="font-bold text-xl md:text-3xl uppercase mb-4 inline-block border-b-4 border-black pb-1">{lang === "en" ? "Description" : "Descripción"}</h2>
+                <p className="font-mono text-base md:text-lg leading-relaxed">{projectDescription}</p>
               </div>
 
-              <div className="my-4 flex gap-3 flex-wrap justify-start">
+              <div className="my-6 flex gap-3 flex-wrap">
                 {techStack.map((tech) => (
-                  <button
+                  <span
                     key={tech}
-                    className="px-3 py-2 border-4 hover:shadow-[4px_4px_0_0_#000]"
+                    className="font-mono font-bold text-sm md:text-base px-3 py-1.5 border-4 border-black bg-white shadow-[4px_4px_0_0_#000]"
                   >
                     {tech}
-                  </button>
+                  </span>
                 ))}
               </div>
-              <div className="flex gap-4 flex-wrap mt-4 border-t-4 py-3 justify-center text-sm md:text-2xl w-full">
+
+              <div className="flex gap-4 flex-wrap mt-6 border-t-8 border-black py-6 justify-center md:justify-start text-sm md:text-xl w-full">
                 {projectLinks.code && (
                   <a
                     href={projectLinks.code}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 justify-center p-2 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-base bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]"
+                    className="flex items-center gap-2 justify-center px-6 py-3 cursor-pointer uppercase font-bebas text-xl bg-black text-white border-4 border-black hover:bg-[var(--accent)] hover:text-white shadow-[6px_6px_0_0_#000] active:translate-y-1 active:shadow-none transition-all"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="hover:text-black w-6 h-6 md:w-8 md:h-8"
+                      className="w-6 h-6 md:w-8 md:h-8"
                       width="48"
                       height="48"
                       viewBox="0 0 24 24"
@@ -144,7 +157,7 @@ export default function ProjectModal({
                     href={projectLinks.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 justify-center p-2 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-base bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]"
+                    className="flex items-center gap-2 justify-center px-6 py-3 cursor-pointer uppercase font-bebas text-xl bg-white text-black border-4 border-black hover:bg-[var(--accent)] hover:text-white shadow-[6px_6px_0_0_#000] active:translate-y-1 active:shadow-none transition-all"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +179,7 @@ export default function ProjectModal({
                     href={projectLinks.design}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 justify-center p-2 cursor-pointer transition-all duration-300 ease-in-out uppercase font-bebas text-base bg-black text-white border-4 border-black hover:bg-white hover:text-black hover:border-black hover:shadow-[4px_4px_0_0_#000]"
+                    className="flex items-center gap-2 justify-center px-6 py-3 cursor-pointer uppercase font-bebas text-xl bg-white text-black border-4 border-black hover:bg-[var(--accent)] hover:text-white shadow-[6px_6px_0_0_#000] active:translate-y-1 active:shadow-none transition-all"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

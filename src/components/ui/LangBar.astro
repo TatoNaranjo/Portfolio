@@ -9,7 +9,7 @@ interface Props {
 const {language, level, certificate} = Astro.props;
 ---
 
-<div class="flex md:items-center flex-col gap-3 md:flex-row border-4 text-center justify-between px-4 py-2">
+<div class="flex md:items-center flex-col gap-3 md:flex-row border-4 text-center justify-between px-4 py-2 bg-white">
     <span class="md:text-2xl uppercase font-bold">{language}</span>
     <Button text={level} href={`${certificate}`} className={certificate==""?"pointer-events-none":""} />
 </div>
