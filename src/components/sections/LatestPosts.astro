@@ -25,7 +25,7 @@ const localizedPosts = allPosts
         {localizedPosts.map((post) => (
             <a href={`/${currentLang}/blog/${post.id.split('/').pop()}`} class="group block w-full bg-white border-4 border-black p-6 shadow-[8px_8px_0_0_#000] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0_0_#000] transition-all flex flex-col justify-between min-h-[250px]">
                 <div>
-                    <h3 class="text-2xl font-bold uppercase tracking-tighter mb-4 group-hover:text-[var(--accent)] transition-colors">
+                    <h3 class="text-2xl uppercase tracking-tighter mb-4 group-hover:text-[var(--accent)] transition-colors">
                         {post.data.title}
                     </h3>
                     <p class="font-mono text-sm text-slate-600 mb-6 line-clamp-3">
