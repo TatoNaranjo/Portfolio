@@ -5,7 +5,7 @@ interface Props {
   projectTitle: string;
   projectDescription: string;
   projectYear: string;
-  imgName?: string;
+  imgSrc?: string;
   projectLinks: {
     code: string;
     demo?: string;
@@ -19,7 +19,7 @@ export default function ProjectModal({
   projectTitle,
   projectDescription,
   projectYear,
-  imgName,
+  imgSrc,
   projectLinks,
   techStack,
 }: Props) {
@@ -59,7 +59,7 @@ export default function ProjectModal({
         className="group relative border-4 border-black flex flex-col cursor-pointer w-full h-full bg-white overflow-hidden text-left hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#000] transition-all duration-300"
       >
         <div className="w-full h-2/3 border-b-4 border-black overflow-hidden bg-gray-200">
-          {imgName && <img src={`/images/projects/${imgName}`} alt={projectTitle} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />}
+          {imgSrc && <img src={imgSrc} alt={projectTitle} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />}
         </div>
         <div className="flex flex-col justify-between p-4 h-1/3 bg-white group-hover:bg-[var(--accent)] transition-colors duration-0">
             <div className="flex justify-between items-start gap-2">

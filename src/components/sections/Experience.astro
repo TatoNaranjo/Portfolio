@@ -29,7 +29,7 @@ const allImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/imag
        {expStrings.item.map((exp) => (
     <div class="mb-8 flex flex-col md:flex-row border-4 items-stretch bg-white">
         
-        <div class="w-full h-48 md:w-64 md:h-auto shrink-0">
+        <div class="w-full h-48 md:w-64 md:h-auto shrink-0 border-b-4 md:border-b-0 md:border-r-4 border-black">
             <Image 
                 src={allImages[`/src/assets/images/${exp.imgName}`].default} 
                 alt={exp.company} 
