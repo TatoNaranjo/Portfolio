@@ -6,7 +6,7 @@
   --animate-movelogo: moveLogo 3s ease-in-out infinite;
   --animate-float-slow:float 6s ease-in-out infinite;
   --animate-float-fast:float 4s ease-in-out infinite;
-  --animate-marquee: marquee 20s linear infinite;
+  --animate-marquee: marquee 40s linear infinite;
 
 @keyframes moveLogo {
   0% {

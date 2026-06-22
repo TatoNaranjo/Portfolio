@@ -18,42 +18,106 @@ interface Props {
 }
 const {expStrings, sectionTitle} = Astro.props;
 const allImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.*', { eager: true });
+
+const groupedExperiences = expStrings.item.reduce((acc, curr) => {
+    const existingGroup = acc.find(group => group.company === curr.company);
+    if (existingGroup) {
+        existingGroup.roles.push({
+            role: curr.role,
+            duration: curr.duration,
+            items: curr.items
+        });
+    } else {
+        acc.push({
+            company: curr.company,
+            imgName: curr.imgName,
+            roles: [{
+                role: curr.role,
+                duration: curr.duration,
+                items: curr.items
+            }]
+        });
+    }
+    return acc;
+}, [] as { company: string, imgName: string, roles: { role: string, duration: string, items: string[] }[] }[]);
 ---
 <section class="border-b-8 border-black">
 <div class="max-w-screen-xl mx-auto flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-9">
 <SectionTitle text={sectionTitle} />
 
-<div class="">
-    <div class="">
+<div class="w-full">
+    <div class="w-full">
         
-       {expStrings.item.map((exp) => (
-    <div class="mb-8 flex flex-col md:flex-row border-4 items-stretch bg-white">
-        
-        <div class="w-full h-48 md:w-64 md:h-auto shrink-0 border-b-4 md:border-b-0 md:border-r-4 border-black">
-            <Image 
-                src={allImages[`/src/assets/images/${exp.imgName}`].default} 
-                alt={exp.company} 
-                
-                class="w-full h-full object-cover"
-            />
-        </div>
+       {groupedExperiences.map((group) => {
+           if (group.roles.length === 1) {
+               const role = group.roles[0];
+               return (
+                    <div class="mb-8 flex flex-col md:flex-row border-4 items-stretch bg-white">
+                        <div class="w-full h-48 md:w-64 md:h-auto shrink-0 border-b-4 md:border-b-0 md:border-r-4 border-black">
+                            <Image 
+                                src={allImages[`/src/assets/images/${group.imgName}`].default} 
+                                alt={group.company} 
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
 
-        <div class="flex flex-col grow">
-            <div class="text-white text-sm  bg-black flex flex-col md:items-start items-center text-center md:text-start justify-center p-6 gap-2">
-                <h3 class="text-2xl md:text-3xl lg:text-4xl">{exp.role}</h3>
-                <h4 class="text-lg md:text-xl font-mono  uppercase">{exp.company}</h4>
-                <span class="font-mono text-xs md:text-sm border border-white px-2 py-1">{exp.duration}</span>
-            </div>
-                <ul class="list-disc list-inside p-6 flex flex-col grow justify-center text-sm md:text-base lg:text-lg">
-                    {exp.items.map((item) => (
-                        <li>{item}</li>
-                    ))}
-                </ul>
+                        <div class="flex flex-col grow">
+                            <div class="text-white text-sm bg-black flex flex-col md:items-start items-center text-center md:text-start justify-center p-6 gap-2">
+                                <h3 class="text-2xl md:text-3xl lg:text-4xl">{role.role}</h3>
+                                <h4 class="text-lg md:text-xl font-mono uppercase">{group.company}</h4>
+                                <span class="font-mono text-xs md:text-sm border border-white px-2 py-1">{role.duration}</span>
+                            </div>
+                            <ul class="list-disc list-inside p-6 flex flex-col grow justify-center text-sm md:text-base lg:text-lg">
+                                {role.items.map((item) => (
+                                    <li>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+               );
+           }
 
-        </div>
-        
-    </div>
-))}
+           return (
+                <div class="mb-8 flex flex-col md:flex-row border-4 items-stretch bg-white">
+                    <div class="w-full h-48 md:w-64 md:h-auto shrink-0 border-b-4 md:border-b-0 md:border-r-4 border-black">
+                        <Image 
+                            src={allImages[`/src/assets/images/${group.imgName}`].default} 
+                            alt={group.company} 
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    <div class="flex flex-col grow">
+                        <div class="text-white text-sm bg-black flex flex-col md:items-start items-center text-center md:text-start justify-center p-6 gap-2">
+                            <h3 class="text-2xl md:text-3xl lg:text-4xl uppercase">{group.company}</h3>
+                        </div>
+                        
+                        <div class="p-6 flex flex-col grow justify-center text-sm md:text-base lg:text-lg">
+                            {group.roles.map((role, index) => (
+                                <div class="flex relative">
+                                    <div class="flex flex-col items-center mr-6 mt-2 shrink-0">
+                                        <div class="w-3 h-3 bg-black rounded-full"></div>
+                                        {index !== group.roles.length - 1 && (
+                                            <div class="w-0.5 h-full bg-black my-1"></div>
+                                        )}
+                                    </div>
+                                    
+                                    <div class="pb-6 w-full">
+                                        <h4 class="text-xl md:text-2xl font-bold">{role.role}</h4>
+                                        <span class="font-mono text-xs md:text-sm border border-black px-2 py-1 inline-block my-2">{role.duration}</span>
+                                        <ul class="list-disc list-inside mt-2">
+                                            {role.items.map((item) => (
+                                                <li class="mb-1">{item}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+           );
+       })}
     </div>
 </div>
 </div>
