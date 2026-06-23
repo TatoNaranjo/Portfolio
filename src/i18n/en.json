@@ -1,13 +1,51 @@
 {
   "altLang": "es",
+  "navbar": {
+    "home": "home",
+    "work": "work",
+    "about": "about",
+    "blog": "blog",
+    "contact": "contact"
+  },
+  "gags": {
+    "about": "100% human",
+    "blog": "read my mind",
+    "experience": "battle scars",
+    "skills": "my tricks",
+    "projects": "sleepless nights",
+    "education": "the good ol' days"
+  },
+  "personalGags": {
+    "tatoWasHere": "tato was here",
+    "appleMusic": "hey, i like this song... *add",
+    "spotify": "or spotify",
+    "musicboard": "i rate music too",
+    "letterboxd": "my film diary",
+    "bookstore": "powered by some coffee from Tinta y Tiempo",
+    "switch": "probably playing Switch",
+    "guitar": "learning guitar riffs",
+    "blogRead": "grab a coffee",
+    "blogEnjoy": "hope you enjoy"
+  },
   "welcome": {
     "badgeInfo": "Full-Stack Software Engineer",
     "contact": "contact",
-    "currentlyIn": "Working for:"
+    "currentlyIn": "Working for:",
+    "doodles": {
+      "hero": "// hero",
+      "role": "← role",
+      "thatsMe": "hello world, that's me",
+      "sayHi": "say hi *",
+      "todoShipV2": "TODO: ship v2"
+    }
   },
   "about": {
     "sectionTitle": "About Me",
-    "content": "Systems Engineer and Full-Stack Developer passionate about software architecture, clean code, and system resilience. Solid experience building scalable web and mobile applications with React, Flutter, TypeScript, and Firebase, as well as integrating hardware (BLE) and Machine Learning models in production environments. Proven ability to manage complete development lifecycles, from architecture conception to deployment, handling complex hardware-software integrations and real-time data flows."
+    "content": [
+      "Systems Engineer and Full-Stack Developer passionate about software architecture, clean code, and system resilience.",
+      "Solid experience building scalable web and mobile applications with React, Flutter, TypeScript, and Firebase, as well as integrating hardware (BLE) and Machine Learning models in production environments.",
+      "Proven ability to manage complete development lifecycles, from architecture conception to deployment, handling complex hardware-software integrations and real-time data flows."
+    ]
   },
   "experience": {
     "sectionTitle": "Experience",

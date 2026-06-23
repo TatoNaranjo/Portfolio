@@ -6,16 +6,21 @@ interface Props{
     sectionTitleLeft:string;
     sectionTitleRight:string;
     languages: {language:string; level:string; certificate:string;}[];
+    gag?: string;
 }
 
-const {sectionTitleLeft, sectionTitleRight,languages} = Astro.props;
+const {sectionTitleLeft, sectionTitleRight,languages, gag} = Astro.props;
 
 const skillsList = ["JavaScript", "TypeScript", "React", "Vite", "Flutter", "Python", "Node.js", "Tailwind CSS", "Firebase", "SQL", "Machine Learning (NLP/SVM)", "Figma", "Git & GitHub", "Agile/Scrum"];
 ---
-<section class="border-b-8 border-black">
-<div class="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-center md:items-start md:justify-between gap-8 px-6 py-9">
-    <div class="flex flex-col gap-6 md:w-1/2 items-center md:items-start">
-    <SectionTitle text={sectionTitleLeft} />
+<section class="border-b-8 border-black relative">
+<div class="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-center md:items-start md:justify-between gap-8 px-6 py-16 md:py-24 relative">
+    <img src="/images/Icons/dddoodle-pack/misc/misc-31.svg" class="hidden xl:block absolute top-[20%] -right-48 w-40 h-auto opacity-50 rotate-[-10deg]" alt="" loading="lazy" />
+    <img src="/images/Icons/dddoodle-pack/misc/misc-32.svg" class="hidden xl:block absolute bottom-[20%] -left-32 w-24 h-auto opacity-50 rotate-12" alt="" loading="lazy" />
+    {gag && <span class="hidden xl:block absolute top-[25%] -right-12 font-handwriting text-2xl text-gray-800 rotate-12 whitespace-nowrap">{gag}</span>}
+    <div class="flex flex-col gap-6 md:w-1/2 items-center md:items-start relative">
+    <img src="/images/Icons/dddoodle-pack/arrows/arrow-5.svg" class="hidden md:block absolute top-12 left-48 w-12 h-auto opacity-70 rotate-[80deg]" alt="" />
+    <SectionTitle text={sectionTitleLeft} rotation="-rotate-1" />
     <div class="gap-3 flex flex-wrap justify-center md:justify-start">
         {skillsList.map((skill) => (
             <Button text={skill} href="#Skills" variant='white' className='pointer-events-none' />

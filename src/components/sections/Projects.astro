@@ -21,15 +21,22 @@ interface Props{
     projectStrings:{
         item: ProjectItem[];
     }
+    gag?: string;
+    personalGags?: { [key: string]: string };
 }
-const {sectionTitle, projectStrings} = Astro.props;
+const {sectionTitle, projectStrings, gag, personalGags} = Astro.props;
 const path = Astro.url.pathname;
 const currentLang = path.startsWith('/en') ? 'en' : 'es';
 const allImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*.*', { eager: true });
 ---
 
-<section id="work" class="max-w-screen-xl mx-auto flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-12">
-<SectionTitle text={sectionTitle} />
+<section id="work" class="max-w-screen-xl mx-auto flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-16 md:py-24 relative">
+{personalGags && <span class="hidden xl:block absolute top-[40%] -left-52 font-handwriting text-2xl text-gray-800 rotate-6 whitespace-nowrap">{personalGags.switch}</span>}
+<img src="/images/Icons/dddoodle-pack/misc/misc-33.svg" class="hidden xl:block absolute top-[30%] -left-40 w-32 h-auto opacity-50 -rotate-6 -z-10" alt="" loading="lazy" />
+<img src="/images/Icons/dddoodle-pack/misc/misc-34.svg" class="hidden xl:block absolute bottom-[20%] -right-32 w-28 h-auto opacity-50 rotate-12 -z-10" alt="" loading="lazy" />
+<img src="/images/Icons/dddoodle-pack/arrows/arrow-2.svg" class="hidden md:block absolute top-28 left-64 w-16 h-auto opacity-70 rotate-[20deg]" alt="" loading="lazy" />
+{gag && <span class="hidden xl:block absolute top-[10%] right-10 font-handwriting text-2xl text-gray-800 -rotate-[15deg] whitespace-nowrap">{gag}</span>}
+<SectionTitle text={sectionTitle} rotation="rotate-1" />
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
 

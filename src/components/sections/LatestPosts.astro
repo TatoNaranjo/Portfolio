@@ -4,8 +4,10 @@ import SectionTitle from '../ui/SectionTitle.astro';
 
 interface Props {
     sectionTitle: string;
+    gag?: string;
+    personalGags?: { [key: string]: string };
 }
-const { sectionTitle } = Astro.props;
+const { sectionTitle, gag, personalGags } = Astro.props;
 const path = Astro.url.pathname;
 const currentLang = path.startsWith('/en') ? 'en' : 'es';
 
@@ -18,8 +20,20 @@ const localizedPosts = allPosts
   .slice(0, 3); // Take the latest 3
 ---
 
-<section id="latest-posts" class="max-w-screen-xl mx-auto flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-12">
-    <SectionTitle text={sectionTitle} />
+<section id="latest-posts" class="max-w-screen-xl mx-auto flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-12 relative">
+    {personalGags && (
+        <a href="https://letterboxd.com/TatoNaranjo/" target="_blank" class="hidden xl:flex absolute top-[60%] -right-40 items-center gap-2 font-handwriting text-2xl text-gray-800 -rotate-12 hover:scale-110 transition-transform">
+            <span>{personalGags.letterboxd}</span>
+            <img src="/images/Icons/dddoodle-pack/arrows/arrow-12.svg" class="w-8 h-auto rotate-180" alt=""/>
+        </a>
+    )}
+    <img src="/images/Icons/dddoodle-pack/misc/misc-22.svg" class="hidden xl:block absolute top-[40%] -right-32 w-28 h-auto opacity-50 rotate-6 -z-10" alt="" loading="lazy" />
+    <img src="/images/Icons/dddoodle-pack/misc/misc-23.svg" class="hidden xl:block absolute bottom-[10%] -left-32 w-24 h-auto opacity-50 -rotate-12 -z-10" alt="" />
+    {gag && <span class="hidden xl:block absolute top-[30%] -left-40 font-handwriting text-2xl text-gray-800 rotate-6 whitespace-nowrap">{gag}</span>}
+    <SectionTitle text={sectionTitle} rotation="-rotate-2" />
+    
+    <span class="hidden md:block absolute top-6 left-[300px] font-handwriting text-5xl text-[var(--accent)] rotate-12">*</span>
+    <img src="/images/Icons/dddoodle-pack/arrows/arrow-1.svg" class="hidden md:block absolute top-16 left-1/2 w-16 h-auto rotate-[100deg] opacity-70" alt="" />
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6">
         {localizedPosts.map((post) => (
@@ -37,7 +51,7 @@ const localizedPosts = allPosts
                         {post.data.pubDate.toLocaleDateString(currentLang === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                     </div>
                     {post.data.tags && post.data.tags.length > 0 && (
-                        <div class="font-mono text-xs font-bold text-[var(--accent)]">
+                        <div class="font-mono text-xs font-bold bg-[var(--accent)] text-white px-2 py-0.5 border border-black shadow-[2px_2px_0_0_#000]">
                             #{post.data.tags[0]}
                         </div>
                     )}

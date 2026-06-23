@@ -4,18 +4,23 @@ interface Props {
 }
 const {altLang = "EN"} = Astro.props
 import Button from "../ui/Button.astro";
+import en from "../../i18n/en.json";
+import es from "../../i18n/es.json";
 
 let link = altLang.toLowerCase();
 let currentLang = altLang.toLowerCase() === "en" ? "es" : "en";
+const t = currentLang === "es" ? es.navbar : en.navbar;
 ---
 
 
-<div class ="header max-w-screen-xl mx-auto flex justify-end items-center gap-6 p-4">
+<div class ="header max-w-screen-xl mx-auto flex justify-between md:justify-end items-center gap-6 p-4">
+    <a href={`/${currentLang}`} class="md:hidden hover:text-[var(--accent)] transition-colors font-mono font-bold text-xl uppercase tracking-wide">_{t.home}</a>
     <nav class="hidden md:flex gap-6 text-xl uppercase tracking-wide">
-        <a href={`/${currentLang}#work`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_work</a>
-        <a href={`/${currentLang}#about`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_about</a>
-        <a href={`/${currentLang}/blog`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_blog</a>
-        <a href="/#contact" class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_contact</a>
+        <a href={`/${currentLang}`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_{t.home}</a>
+        <a href={`/${currentLang}#work`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_{t.work}</a>
+        <a href={`/${currentLang}#about`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_{t.about}</a>
+        <a href={`/${currentLang}/blog`} class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_{t.blog}</a>
+        <a href="mailto:naranjosa2004@gmail.com" class="hover:text-[var(--accent)] hover:underline decoration-4 underline-offset-4 transition-colors font-mono">_{t.contact}</a>
     </nav>
-    <Button text=`${altLang}` href={`/${link}`} className="text-xs md:text-base w-8 h-8 md:w-[52px] md:h-[52px]"></Button>
+    <Button text=`${altLang}` href={`/${link}`} className="text-xs md:text-base w-8 h-8 md:w-[52px] md:h-[52px] ml-auto md:ml-0"></Button>
 </div>
