@@ -10,11 +10,19 @@ interface Props {
         badgeInfo: string;
         contact: string;
         currentlyIn: string;
+        doodles: {
+            hero: string;
+            role: string;
+            thatsMe: string;
+            sayHi: string;
+            todoShipV2: string;
+        };
     };
+    personalGags?: { [key: string]: string };
 }
 
-const { i18n } = Astro.props;
-const {badgeInfo, contact, currentlyIn} = i18n;
+const { i18n, personalGags } = Astro.props;
+const {badgeInfo, contact, currentlyIn, doodles} = i18n;
 
 const logoStyles ="w-[32px] h-[32px] md:hover:w-[48px] md:hover:h-[48px] transition-all duration-300 ease-in-out";
 
@@ -44,13 +52,21 @@ const logoList = [
 ];
 ---
 
-<section id="about" class="welcomeContainer max-w-screen-xl mx-auto flex flex-col pt-8 md:pt-16 px-6 md:px-16 md:mb-12">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-8 w-full relative">
-        <div class="infoContainer flex flex-col gap-6 py-4 w-full md:w-3/5 z-10" transition:animate="slide">
-            <div class="badgeContainer flex border-4 border-black bg-[var(--accent)] text-white uppercase w-fit py-2 px-6 shadow-[4px_4px_0_0_#000]">
+<section id="about" class="welcomeContainer max-w-screen-xl mx-auto flex flex-col pt-8 md:pt-16 px-6 md:px-16 md:mb-12 relative">
+    <span class="hidden xl:block absolute left-2 lg:-left-6 top-32 font-handwriting text-3xl text-gray-800 -rotate-12">{doodles.hero}</span>
+    {personalGags && (
+        <a href="https://music.apple.com/co/playlist/tatos-liked-songs/pl.u-76oNNrNFvPBYPEM?l=en" target="_blank" class="hidden xl:flex absolute top-[90%] right-[5%] items-center gap-3 font-handwriting text-3xl text-[var(--accent)] rotate-12 hover:scale-110 transition-transform z-30">
+            <span>{personalGags.appleMusic}</span>
+            <img src="/images/Icons/dddoodle-pack/arrows/arrow-8.svg" class="w-12 h-auto rotate-90" alt=""/>
+        </a>
+    )}
+    <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 w-full relative lg:pt-10">
+        <div class="infoContainer flex flex-col gap-6 py-4 w-full lg:w-3/5 z-10 items-center lg:items-start text-center lg:text-left" transition:animate="slide">
+            <div class="badgeContainer flex border-4 border-black bg-[var(--accent)] text-white uppercase w-fit py-2 px-6 shadow-[4px_4px_0_0_#000] relative">
                 {badgeInfo}
+                <span class="hidden xl:block absolute -right-28 top-0 font-handwriting text-2xl text-gray-800 -rotate-3 whitespace-nowrap">{doodles.role}</span>
             </div>
-            <h1 class="nameContainer flex flex-col uppercase text-6xl md:text-[7rem] lg:text-[9rem] text-left leading-[0.85] m-0">
+            <h1 class="nameContainer flex flex-col uppercase text-6xl sm:text-7xl md:text-[6.5rem] lg:text-[6rem] xl:text-[9rem] leading-[0.85] m-0">
                 <span id="firstName">Santiago</span>
                 <span>Naranjo</span>
                 <span>Herrera</span>
@@ -63,16 +79,24 @@ const logoList = [
                 </div>
             </a>
 
-            <div class="contactContainer flex flex-wrap gap-4 justify-start mt-4">
+            <div class="contactContainer flex flex-wrap gap-4 justify-center lg:justify-start mt-4 relative">
                 <Button text={contact} href="mailto:naranjosa2004@gmail.com"/>
                 <Button text='Github' href='https://github.com/TatoNaranjo' variant='white'/>
                 <Button text='+57 3143109118' href='https://wa.me/3143109118' variant='white'/>
+                
+                <span class="hidden lg:block absolute -bottom-16 left-24 font-handwriting text-2xl text-gray-800 rotate-6 whitespace-nowrap">{doodles.sayHi}</span>
+                <img src="/images/Icons/dddoodle-pack/lines/line-5.svg" class="hidden lg:block absolute -bottom-14 left-4 w-24 h-auto -rotate-6 opacity-80" alt="" />
             </div>
         </div>
 
-        <div class="photoFrame flex flex-col items-center md:items-end justify-center w-full md:w-2/5 z-0 mt-8 md:mt-0">
+        <div class="photoFrame flex flex-col items-center lg:items-end justify-center w-full lg:w-2/5 z-0 mt-8 lg:mt-0">
             <div class="relative inline-block w-[280px] h-[380px] md:w-[360px] md:h-[480px]">
                 <X class="absolute -top-10 -left-10 w-[89px] h-[89px] max-sm:hidden z-20"/>
+                
+                <span class="hidden lg:block absolute -top-12 md:-top-14 left-[40%] -translate-x-1/2 font-handwriting text-2xl text-gray-800 -rotate-3 whitespace-nowrap z-30">{doodles.thatsMe}</span>
+                <img src="/images/Icons/dddoodle-pack/arrows/arrow-14.svg" class="hidden lg:block absolute -top-16 left-[60%] w-16 h-auto opacity-80 z-30" alt="" />
+                <span class="hidden lg:block absolute -bottom-6 -right-6 font-handwriting text-xl text-[var(--accent)] bg-white border-2 border-[var(--accent)] px-3 py-1 rotate-3 shadow-[4px_4px_0_0_var(--accent)] z-30">{doodles.todoShipV2}</span>
+
                 <Image src={MePhoto} alt="Santiago Naranjo Herrera" width={595} height={954} class="w-full h-full object-cover border-4 border-black shadow-[8px_8px_0_0_#000]" priority/>
                 
                 <div class="logoContainers hidden md:block absolute inset-0 pointer-events-none z-10">

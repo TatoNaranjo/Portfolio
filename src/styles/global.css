@@ -35,6 +35,7 @@
   --titleFont: "Bebas Neue", sans-serif;
   --paragraphFont: "Space Grotesk", sans-serif;
   --monoFont: "Space Mono", monospace;
+  --handwritingFont: "Caveat", cursive;
   --accent: #0f5132;
 }
 body {
@@ -50,4 +51,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 .nameContainer, .badgeContainer{
     font-family: var(--titleFont);
+}
+.font-handwriting {
+    font-family: var(--handwritingFont);
 }

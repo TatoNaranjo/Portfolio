@@ -21,12 +21,12 @@ let {altLang} = text_es;
   description="Portafolio de Santiago Naranjo Herrera, Full-Stack Software Engineer. Descubre mis proyectos, experiencia y habilidades."
 >
   <Header altLang=`${altLang}`/>
-  <Welcome i18n = {text_es.welcome}/>
-  <About title={text_es.about.sectionTitle} content={text_es.about.content} />
-  <LatestPosts sectionTitle={text_es.latestPosts.sectionTitle} />
-  <Experience sectionTitle={text_es.experience.sectionTitle} expStrings={text_es.experience} />
-  <Skills sectionTitleLeft={text_es.skills.sectionTitle[0]} sectionTitleRight={text_es.skills.sectionTitle[1]} languages={text_es.languages}/>
-  <Projects sectionTitle={text_es.projects.sectionTitle} projectStrings={text_es.projects}/>
-  <Education sectionTitle={text_es.education.sectionTitle} eduStrings={text_es.education}/>
-  <Footer subtitle={text_es.footer.subtitle}/>
+  <Welcome i18n={text_es.welcome} personalGags={text_es.personalGags} />
+  <About title={text_es.about.sectionTitle} content={text_es.about.content} gag={text_es.gags.about} personalGags={text_es.personalGags} />
+  <LatestPosts sectionTitle={text_es.latestPosts.sectionTitle} gag={text_es.gags.blog} personalGags={text_es.personalGags} />
+  <Experience sectionTitle={text_es.experience.sectionTitle} expStrings={text_es.experience} gag={text_es.gags.experience} personalGags={text_es.personalGags} />
+  <Skills sectionTitleLeft={text_es.skills.sectionTitle[0]} sectionTitleRight={text_es.skills.sectionTitle[1]} languages={text_es.languages} gag={text_es.gags.skills}/>
+  <Projects sectionTitle={text_es.projects.sectionTitle} projectStrings={text_es.projects} gag={text_es.gags.projects} personalGags={text_es.personalGags} />
+  <Education sectionTitle={text_es.education.sectionTitle} eduStrings={text_es.education} gag={text_es.gags.education}/>
+  <Footer subtitle={text_es.footer.subtitle} personalGags={text_es.personalGags} />
 </Layout>

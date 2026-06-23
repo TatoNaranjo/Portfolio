@@ -1,13 +1,51 @@
 {
   "altLang": "en",
+  "navbar": {
+    "home": "inicio",
+    "work": "trabajo",
+    "about": "sobre_mi",
+    "blog": "blog",
+    "contact": "contacto"
+  },
+  "gags": {
+    "about": "100% humano",
+    "blog": "lee mi mente",
+    "experience": "los años se pasan volando",
+    "skills": "mis trucos",
+    "projects": "y entre más ideas, más de estos salen",
+    "education": "los viejos tiempos"
+  },
+  "personalGags": {
+    "tatoWasHere": "tato estuvo aquí",
+    "appleMusic": "hey, me gusta esta canción... *agregar",
+    "spotify": "o spotify",
+    "musicboard": "la colección de cosas que voy escuchando",
+    "letterboxd": "peliculas que ví",
+    "bookstore": "con un poquito de café de Tinta y Tiempo",
+    "switch": "seguro jugando en la Switch",
+    "guitar": "aprendiendo a tocar guitarra",
+    "blogRead": "trae un café",
+    "blogEnjoy": "espero te guste"
+  },
   "welcome": {
     "badgeInfo": "Full-Stack Software Engineer",
     "contact": "contacto",
-    "currentlyIn": "Trabajando para:"
+    "currentlyIn": "Trabajando para:",
+    "doodles": {
+      "hero": "// inicio",
+      "role": "← rol",
+      "thatsMe": "hola mundo, ese soy yo",
+      "sayHi": "di hola *",
+      "todoShipV2": "TODO: subir v2"
+    }
   },
   "about": {
     "sectionTitle": "Sobre Mí",
-    "content": "Ingeniero de Sistemas y Desarrollador Full-Stack apasionado por la arquitectura de software, el código limpio y la resiliencia de los sistemas. Experiencia sólida construyendo aplicaciones web y móviles escalables con React, Flutter, TypeScript y Firebase, además de integrar hardware (BLE) y modelos de Machine Learning en entornos de producción. Capacidad demostrada para gestionar ciclos de vida completos de desarrollo, desde la concepción de la arquitectura hasta el despliegue y manejo de integraciones complejas de hardware y software."
+    "content": [
+      "Ingeniero de Sistemas y Desarrollador Full-Stack apasionado por la arquitectura de software, el código limpio y la resiliencia de los sistemas.",
+      "Experiencia sólida construyendo aplicaciones web y móviles escalables con React, Flutter, TypeScript y Firebase, además de integrar hardware (BLE) y modelos de Machine Learning en entornos de producción.",
+      "Capacidad demostrada para gestionar ciclos de vida completos de desarrollo, desde la concepción de la arquitectura hasta el despliegue y manejo de integraciones complejas de hardware y software."
+    ]
   },
   "experience": {
     "sectionTitle": "Experiencia",

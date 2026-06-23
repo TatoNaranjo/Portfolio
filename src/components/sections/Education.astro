@@ -15,16 +15,20 @@ interface Props{
     eduStrings:{
         item:eduItem[];
     }
-
+    gag?: string;
 }
 
-const {sectionTitle,eduStrings} = Astro.props;
+const {sectionTitle,eduStrings, gag} = Astro.props;
 
 ---
 
-<section class="border-b-8 border-black">
-<div class="max-w-screen-xl mx-auto flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-9">
-<SectionTitle text={sectionTitle} />
+<section class="border-b-8 border-black relative">
+<div class="max-w-screen-xl mx-auto flex flex-col items-center justify-center md:items-start md:justify-between gap-8 px-6 py-16 md:py-24 relative">
+<img src="/images/Icons/dddoodle-pack/misc/misc-35.svg" class="hidden xl:block absolute top-[40%] -left-40 w-28 h-auto opacity-50 rotate-12" alt="" loading="lazy" />
+<img src="/images/Icons/dddoodle-pack/misc/misc-36.svg" class="hidden xl:block absolute bottom-[10%] -right-48 w-36 h-auto opacity-50 -rotate-12" alt="" loading="lazy" />
+<img src="/images/Icons/dddoodle-pack/arrows/arrow-3.svg" class="hidden md:block absolute top-28 left-[300px] w-20 h-auto opacity-70 rotate-[-10deg]" alt="" loading="lazy" />
+{gag && <span class="hidden xl:block absolute top-[15%] left-10 font-handwriting text-2xl text-gray-800 -rotate-12 whitespace-nowrap">{gag}</span>}
+<SectionTitle text={sectionTitle} rotation="rotate-3" />
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
 

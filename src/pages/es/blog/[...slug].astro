@@ -4,6 +4,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 import Header from '../../../components/sections/Header.astro';
 import Footer from '../../../components/sections/Footer.astro';
+import text_es from '../../../i18n/es.json';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
@@ -20,7 +21,15 @@ const { Content } = await render(entry);
 <Layout title={`${entry.data.title} | Diario Tech`} description={entry.data.description}>
   <Header altLang="EN" />
   
-  <article class="max-w-screen-md mx-auto px-6 py-12 md:py-20 min-h-screen bg-white/95 backdrop-blur-sm border-x-4 border-slate-900 shadow-xl">
+  <!-- Background Doodles for Blog -->
+  <span class="hidden xl:block fixed top-[12%] left-[8%] font-handwriting text-2xl text-gray-800 rotate-12 -z-10 whitespace-nowrap">{text_es.personalGags.blogRead}</span>
+  <span class="hidden xl:block fixed bottom-[20%] right-[8%] font-handwriting text-2xl text-gray-800 -rotate-12 -z-10 whitespace-nowrap">{text_es.personalGags.blogEnjoy}</span>
+  <img src="/images/Icons/scribbles-free-svg/Scribble-12.svg" class="hidden xl:block fixed top-[15%] left-[5%] w-48 h-auto opacity-30 rotate-12 -z-10" alt="" loading="lazy" />
+  <img src="/images/Icons/scribbles-free-svg/Scribble-26.svg" class="hidden xl:block fixed bottom-[15%] right-[5%] w-40 h-auto opacity-30 -rotate-6 -z-10" alt="" loading="lazy" />
+  <img src="/images/Icons/scribbles-free-svg/Scribble-38.svg" class="hidden xl:block fixed top-[60%] left-[8%] w-32 h-auto opacity-30 -rotate-12 -z-10" alt="" />
+  <img src="/images/Icons/scribbles-free-svg/Scribble-46.svg" class="hidden xl:block fixed top-[20%] right-[8%] w-36 h-auto opacity-30 rotate-[20deg] -z-10" alt="" />
+
+  <article class="max-w-screen-md mx-auto px-6 py-12 md:py-20 min-h-screen bg-white/95 backdrop-blur-sm border-x-4 border-slate-900 shadow-xl relative">
     <header class="mb-12 border-b-4 border-slate-900 pb-8">
       <div class="font-mono text-sm font-bold text-slate-800 mb-4 bg-[var(--accent)] text-white px-3 py-1 inline-block rounded-none uppercase tracking-widest border-2 border-slate-900">
         > date: {entry.data.pubDate.toISOString().split('T')[0]} | status: publicado
